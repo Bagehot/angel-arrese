@@ -15,460 +15,155 @@
       --border: #e2e8f0;
       --white: #ffffff;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
+    body { font-family: 'Georgia','Times New Roman',serif; color: var(--text); background: var(--white); line-height: 1.7; }
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── LANG TOGGLE ── */
-    .lang-bar {
-      background: #0f1c38;
-      display: flex;
-      justify-content: flex-end;
-      padding: 0.35rem 2rem;
-      gap: 0.3rem;
-    }
-    .lang-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.25);
-      color: #94a3b8;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      padding: 0.2rem 0.7rem;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: var(--blue);
-      color: #fff;
-      border-color: var(--blue);
-    }
-    .lang-btn:hover:not(.active) {
-      color: #fff;
-      border-color: rgba(255,255,255,0.5);
-    }
+    /* LANG BAR */
+    .lang-bar { background: #0f1c38; display: flex; justify-content: flex-end; padding: .35rem 2rem; gap: .3rem; }
+    .lang-btn { background: transparent; border: 1px solid rgba(255,255,255,.25); color: #94a3b8; font-family: Arial,sans-serif; font-size: .72rem; letter-spacing: .08em; padding: .2rem .7rem; border-radius: 3px; cursor: pointer; transition: all .2s; }
+    .lang-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .lang-btn:hover:not(.active) { color: #fff; border-color: rgba(255,255,255,.5); }
 
-    /* ── NAV ── */
-    nav {
-      background: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 0 2rem;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    nav ul li a {
-      display: block;
-      color: #cbd5e1;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 1rem 1.2rem;
-      transition: color 0.2s, background 0.2s;
-    }
-    nav ul li a:hover {
-      color: var(--white);
-      background: rgba(255,255,255,0.08);
-      text-decoration: none;
-    }
+    /* NAV */
+    nav { background: var(--navy); position: sticky; top: 0; z-index: 100; padding: 0 2rem; }
+    nav ul { display: flex; list-style: none; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; }
+    nav ul li a { display: block; color: #cbd5e1; font-family: Arial,sans-serif; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; padding: .9rem 1rem; transition: color .2s,background .2s; }
+    nav ul li a:hover { color: #fff; background: rgba(255,255,255,.08); text-decoration: none; }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-      color: var(--white);
-      padding: 4.5rem 2rem 3.5rem;
-    }
-    .hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-    }
-    .hero-avatar {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 3px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
-    }
-    .hero-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-    .hero h1 {
-      font-size: 2.6rem;
-      font-weight: normal;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-    .hero .title {
-      font-family: 'Arial', sans-serif;
-      font-size: 1rem;
-      color: #93c5fd;
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.02em;
-    }
-    .hero .institution {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.88rem;
-      color: #cbd5e1;
-      margin-bottom: 1.3rem;
-      line-height: 1.5;
-    }
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.3rem;
-    }
-    .tag {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #e2e8f0;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.75rem;
-      padding: 0.22rem 0.7rem;
-      border-radius: 20px;
-    }
-    .hero-links { display: flex; flex-wrap: wrap; gap: 0.7rem; }
-    .btn {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.78rem;
-      padding: 0.45rem 1.1rem;
-      border-radius: 4px;
-      letter-spacing: 0.03em;
-      transition: opacity 0.2s;
-      display: inline-block;
-    }
-    .btn:hover { opacity: 0.85; text-decoration: none; }
-    .btn-white { background: var(--white); color: var(--navy); }
-    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.45); }
+    /* HERO */
+    .hero { background: linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%); color: #fff; padding: 4.5rem 2rem 3.5rem; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 3rem; }
+    .hero-avatar { width: 165px; height: 165px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid rgba(255,255,255,.35); background: rgba(255,255,255,.12); }
+    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .hero h1 { font-size: 2.6rem; font-weight: normal; letter-spacing: -.02em; margin-bottom: .3rem; }
+    .hero .title { font-family: Arial,sans-serif; font-size: 1rem; color: #93c5fd; margin-bottom: .6rem; }
+    .hero .institution { font-family: Arial,sans-serif; font-size: .88rem; color: #cbd5e1; margin-bottom: 1.3rem; line-height: 1.6; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.3rem; }
+    .tag { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #e2e8f0; font-family: Arial,sans-serif; font-size: .74rem; padding: .2rem .65rem; border-radius: 20px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .btn { font-family: Arial,sans-serif; font-size: .77rem; padding: .42rem 1rem; border-radius: 4px; transition: opacity .2s; display: inline-block; }
+    .btn:hover { opacity: .85; text-decoration: none; }
+    .btn-white { background: #fff; color: var(--navy); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.45); }
 
-    /* ── STATS BAR ── */
-    .stats-bar {
-      background: var(--light);
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      padding: 1.4rem 2rem;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-    .stat {
-      text-align: center;
-      flex: 1;
-      min-width: 110px;
-      padding: 0.3rem 1rem;
-      border-right: 1px solid var(--border);
-    }
+    /* STATS */
+    .stats-bar { background: var(--light); border-bottom: 1px solid var(--border); }
+    .stats-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 1.3rem 2rem; flex-wrap: wrap; }
+    .stat { text-align: center; flex: 1; min-width: 100px; padding: .3rem 1rem; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
-    .stat-num {
-      font-size: 1.9rem;
-      font-weight: bold;
-      color: var(--blue);
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-    .stat-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .stat-num { font-size: 1.85rem; font-weight: bold; color: var(--blue); line-height: 1; margin-bottom: .15rem; }
+    .stat-label { font-family: Arial,sans-serif; font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
 
-    /* ── LAYOUT ── */
-    .page-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      display: grid;
-      grid-template-columns: 1fr 310px;
-      gap: 3rem;
-      align-items: start;
-    }
+    /* LAYOUT */
+    .page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2.8rem; align-items: start; }
 
-    /* ── SECTION ── */
-    section { margin-bottom: 3.2rem; }
-    .section-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-    h2 {
-      font-size: 1.45rem;
-      color: var(--navy);
-      font-weight: normal;
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--border);
-    }
+    /* SECTIONS */
+    section { margin-bottom: 3rem; }
+    .section-label { font-family: Arial,sans-serif; font-size: .68rem; text-transform: uppercase; letter-spacing: .15em; color: var(--accent); margin-bottom: .4rem; }
+    h2 { font-size: 1.4rem; color: var(--navy); font-weight: normal; margin-bottom: 1.1rem; padding-bottom: .45rem; border-bottom: 2px solid var(--border); }
+    .about-text p { margin-bottom: 1rem; font-size: 1.01rem; }
 
-    /* ── ABOUT ── */
-    .about-text p { margin-bottom: 1rem; font-size: 1.02rem; }
+    /* RESEARCH GRID */
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .research-card { background: var(--light); border-left: 3px solid var(--blue); padding: .9rem 1.1rem; border-radius: 0 4px 4px 0; }
+    .research-card h3 { font-family: Arial,sans-serif; font-size: .84rem; font-weight: bold; color: var(--navy); margin-bottom: .25rem; }
+    .research-card p { font-family: Arial,sans-serif; font-size: .78rem; color: var(--muted); }
 
-    /* ── RESEARCH GRID ── */
-    .research-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .research-card {
-      background: var(--light);
-      border-left: 3px solid var(--blue);
-      padding: 1rem 1.2rem;
-      border-radius: 0 4px 4px 0;
-    }
-    .research-card h3 {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.85rem;
-      font-weight: bold;
-      color: var(--navy);
-      margin-bottom: 0.3rem;
-    }
-    .research-card p {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── PUBLICATIONS ── */
+    /* PUB LIST */
     .pub-list { list-style: none; }
-    .pub-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .pub-item { padding: .85rem 0; border-bottom: 1px solid var(--border); }
     .pub-item:last-child { border-bottom: none; }
-    .pub-authors {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .pub-title {
-      font-size: 0.97rem;
-      color: var(--navy);
-      font-style: italic;
-      margin: 0.2rem 0;
-    }
-    .pub-meta {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-    .pub-badge {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.63rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 3px;
-      margin-left: 0.4rem;
-      vertical-align: middle;
-    }
-    .pub-cites {
-      display: inline-block;
-      background: #f0f4ff;
-      color: var(--blue);
-      font-family: 'Arial', sans-serif;
-      font-size: 0.63rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 3px;
-      margin-left: 0.3rem;
-      vertical-align: middle;
-      border: 1px solid #c7d7f7;
-    }
+    .pub-authors { font-family: Arial,sans-serif; font-size: .81rem; color: var(--muted); }
+    .pub-title { font-size: .96rem; color: var(--navy); font-style: italic; margin: .18rem 0; }
+    .pub-title a { color: var(--navy); }
+    .pub-title a:hover { color: var(--blue); }
+    .pub-meta { font-family: Arial,sans-serif; font-size: .79rem; color: var(--muted); }
+    .pub-badge { display: inline-block; background: var(--blue); color: #fff; font-family: Arial,sans-serif; font-size: .62rem; padding: .08rem .42rem; border-radius: 3px; margin-left: .35rem; vertical-align: middle; }
+    .pub-cites { display: inline-block; background: #f0f4ff; color: var(--blue); font-family: Arial,sans-serif; font-size: .62rem; padding: .08rem .42rem; border-radius: 3px; margin-left: .25rem; vertical-align: middle; border: 1px solid #c7d7f7; }
 
-    /* ── BOOKS ── */
-    .books-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .book-card {
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1rem;
-    }
-    .book-year {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.75rem;
-      color: var(--accent);
-      font-weight: bold;
-      margin-bottom: 0.3rem;
-    }
-    .book-title {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-    .book-publisher {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
+    /* BOOKS GRID */
+    .books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .book-card { border: 1px solid var(--border); border-radius: 6px; padding: .9rem; }
+    .book-year { font-family: Arial,sans-serif; font-size: .74rem; color: var(--accent); font-weight: bold; margin-bottom: .25rem; }
+    .book-title { font-size: .88rem; font-style: italic; color: var(--navy); margin-bottom: .3rem; }
+    .book-title a { color: var(--navy); }
+    .book-publisher { font-family: Arial,sans-serif; font-size: .77rem; color: var(--muted); }
 
-    /* ── SIDEBAR ── */
-    .sidebar { display: flex; flex-direction: column; gap: 1.4rem; }
-    .card {
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.2rem;
-    }
-    .card h3 {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.65rem;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.83rem;
-      color: var(--text);
-    }
-    .contact-item:last-child { margin-bottom: 0; }
-    .ci-icon { width: 16px; flex-shrink: 0; margin-top: 2px; text-align: center; }
+    /* CHAPTERS / PROJECTS LIST */
+    .item-list { list-style: none; }
+    .item-list li { padding: .7rem 0; border-bottom: 1px solid var(--border); font-family: Arial,sans-serif; font-size: .85rem; }
+    .item-list li:last-child { border-bottom: none; }
+    .item-list li strong { color: var(--navy); }
+    .item-year { color: var(--accent); font-weight: bold; font-size: .78rem; display: inline-block; min-width: 44px; }
 
-    .profile-links { display: flex; flex-direction: column; gap: 0.45rem; }
-    .profile-link {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.82rem;
-      padding: 0.45rem 0.8rem;
-      border-radius: 5px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      color: var(--text);
-      transition: border-color 0.2s;
-    }
-    .profile-link:hover { border-color: var(--blue); text-decoration: none; color: var(--blue); }
+    /* THESIS LIST */
+    .thesis-item { padding: .75rem 0; border-bottom: 1px solid var(--border); font-family: Arial,sans-serif; font-size: .84rem; }
+    .thesis-item:last-child { border-bottom: none; }
+    .thesis-author { font-weight: bold; color: var(--navy); }
+    .thesis-title { font-style: italic; color: var(--text); }
+    .thesis-meta { color: var(--muted); font-size: .77rem; }
 
-    .metrics-row {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    /* DETAILS / MÁS */
+    details { margin-top: 1.2rem; }
+    details summary {
+      font-family: Arial,sans-serif; font-size: .82rem; color: var(--blue); cursor: pointer;
+      padding: .55rem .9rem; background: #f0f4ff; border: 1px solid #c7d7f7;
+      border-radius: 5px; list-style: none; display: flex; align-items: center; gap: .45rem;
+      user-select: none; transition: background .2s;
     }
-    .metric-chip {
-      flex: 1;
-      min-width: 70px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.5rem 0.4rem;
-      text-align: center;
-    }
-    .metric-chip-num {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: var(--blue);
-      line-height: 1;
-    }
-    .metric-chip-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
-    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: '▶'; font-size: .65rem; transition: transform .2s; flex-shrink: 0; }
+    details[open] summary::before { transform: rotate(90deg); }
+    details[open] summary { background: #e5edff; border-color: #a5b8f0; border-radius: 5px 5px 0 0; }
+    details summary:hover { background: #e5edff; }
+    .details-inner { border: 1px solid #c7d7f7; border-top: none; border-radius: 0 0 5px 5px; padding: 1rem 1rem .5rem; background: #fafcff; }
 
-    .award-item {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.81rem;
-      padding: 0.45rem 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .award-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .award-year { font-size: 0.7rem; color: var(--accent); font-weight: bold; }
-
-    .edu-item {
-      margin-bottom: 0.75rem;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.81rem;
-    }
-    .edu-item:last-child { margin-bottom: 0; }
-    .edu-degree { font-weight: bold; color: var(--navy); }
-    .edu-place { color: var(--muted); font-size: 0.77rem; }
-
-    .teach-list { list-style: none; }
-    .teach-item {
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--border);
-      font-family: 'Arial', sans-serif;
-      font-size: 0.86rem;
-    }
+    /* TEACH */
+    .teach-item { padding: .6rem 0; border-bottom: 1px solid var(--border); font-family: Arial,sans-serif; font-size: .85rem; }
     .teach-item:last-child { border-bottom: none; }
     .teach-course { font-weight: bold; color: var(--navy); }
-    .teach-meta { color: var(--muted); font-size: 0.77rem; }
+    .teach-meta { color: var(--muted); font-size: .77rem; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: #94a3b8;
-      text-align: center;
-      padding: 2rem;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.8rem;
-    }
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 1.3rem; }
+    .card { background: var(--light); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; }
+    .card h3 { font-family: Arial,sans-serif; font-size: .67rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: .8rem; padding-bottom: .45rem; border-bottom: 1px solid var(--border); }
+    .contact-item { display: flex; align-items: flex-start; gap: .55rem; margin-bottom: .6rem; font-family: Arial,sans-serif; font-size: .82rem; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .ci-icon { width: 16px; flex-shrink: 0; margin-top: 2px; text-align: center; }
+    .profile-links { display: flex; flex-direction: column; gap: .4rem; }
+    .profile-link { display: flex; align-items: center; gap: .55rem; font-family: Arial,sans-serif; font-size: .81rem; padding: .42rem .75rem; border-radius: 5px; background: #fff; border: 1px solid var(--border); color: var(--text); transition: border-color .2s; }
+    .profile-link:hover { border-color: var(--blue); text-decoration: none; color: var(--blue); }
+    .metrics-row { display: flex; gap: .45rem; flex-wrap: wrap; }
+    .metric-chip { flex: 1; min-width: 65px; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: .45rem .35rem; text-align: center; }
+    .metric-chip-num { font-size: 1.25rem; font-weight: bold; color: var(--blue); line-height: 1; }
+    .metric-chip-label { font-family: Arial,sans-serif; font-size: .63rem; color: var(--muted); margin-top: .1rem; }
+    .award-item { font-family: Arial,sans-serif; font-size: .8rem; padding: .42rem 0; border-bottom: 1px solid var(--border); }
+    .award-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .award-year { font-size: .7rem; color: var(--accent); font-weight: bold; }
+    .edu-item { margin-bottom: .7rem; font-family: Arial,sans-serif; font-size: .8rem; }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-degree { font-weight: bold; color: var(--navy); }
+    .edu-place { color: var(--muted); font-size: .76rem; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: #94a3b8; text-align: center; padding: 2rem; font-family: Arial,sans-serif; font-size: .8rem; }
     footer a { color: #93c5fd; }
 
-    /* ── HIDE/SHOW LANG ── */
+    /* LANG SHOW/HIDE */
     [data-lang] { display: none; }
     html[lang="es"] [data-lang="es"] { display: revert; }
     html[lang="en"] [data-lang="en"] { display: revert; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
       .hero-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
-      .hero-tags, .hero-links { justify-content: center; }
+      .hero-tags,.hero-links { justify-content: center; }
       .page-content { grid-template-columns: 1fr; }
-      .research-grid, .books-grid { grid-template-columns: 1fr; }
-      .stats-inner { gap: 0; }
-      .stat { min-width: 90px; }
-      nav ul { flex-wrap: wrap; }
-      nav ul li a { padding: 0.7rem 0.8rem; font-size: 0.75rem; }
+      .research-grid,.books-grid { grid-template-columns: 1fr; }
+      .stat { min-width: 85px; }
     }
   </style>
 </head>
@@ -485,50 +180,40 @@
   <ul>
     <li><a href="#sobre-mi"><span data-lang="es">Sobre mí</span><span data-lang="en">About</span></a></li>
     <li><a href="#investigacion"><span data-lang="es">Investigación</span><span data-lang="en">Research</span></a></li>
-    <li><a href="#publicaciones"><span data-lang="es">Publicaciones</span><span data-lang="en">Publications</span></a></li>
+    <li><a href="#articulos"><span data-lang="es">Artículos</span><span data-lang="en">Articles</span></a></li>
     <li><a href="#libros"><span data-lang="es">Libros</span><span data-lang="en">Books</span></a></li>
+    <li><a href="#capitulos"><span data-lang="es">Capítulos</span><span data-lang="en">Chapters</span></a></li>
+    <li><a href="#tesis"><span data-lang="es">Tesis</span><span data-lang="en">PhD</span></a></li>
     <li><a href="#docencia"><span data-lang="es">Docencia</span><span data-lang="en">Teaching</span></a></li>
-    <li><a href="#contacto">Contacto / Contact</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-avatar" id="avatar-container">
-      <img src="foto.jpg" alt="Ángel Arrese" />
-    </div>
+    <div class="hero-avatar"><img src="foto.jpg" alt="Ángel Arrese" /></div>
     <div>
       <h1>Ángel Arrese</h1>
-      <p class="title">
-        <span data-lang="es">Catedrático de Universidad · Full Professor</span>
-        <span data-lang="en">Full Professor · Catedrático de Universidad</span>
-      </p>
+      <p class="title"><span data-lang="es">Catedrático de Universidad · Full Professor</span><span data-lang="en">Full Professor · Catedrático de Universidad</span></p>
       <p class="institution">
         <span data-lang="es">Departamento de Marketing y Empresas de Comunicación<br>Facultad de Comunicación · Universidad de Navarra · Pamplona, España</span>
         <span data-lang="en">Department of Marketing and Media Businesses<br>School of Communication · University of Navarra · Pamplona, Spain</span>
       </p>
       <div class="hero-tags">
-        <span class="tag" data-lang="es">Periodismo Económico</span>
-        <span class="tag" data-lang="en">Business Journalism</span>
-        <span class="tag" data-lang="es">Economía de los Medios</span>
-        <span class="tag" data-lang="en">Media Economics</span>
-        <span class="tag" data-lang="es">Marketing</span>
-        <span class="tag" data-lang="en">Marketing</span>
-        <span class="tag" data-lang="es">Desinformación</span>
-        <span class="tag" data-lang="en">Disinformation</span>
-        <span class="tag" data-lang="es">Medios Digitales</span>
-        <span class="tag" data-lang="en">Digital Media</span>
+        <span class="tag" data-lang="es">Periodismo Económico</span><span class="tag" data-lang="en">Business Journalism</span>
+        <span class="tag" data-lang="es">Economía de los Medios</span><span class="tag" data-lang="en">Media Economics</span>
+        <span class="tag">Marketing</span>
+        <span class="tag" data-lang="es">Desinformación</span><span class="tag" data-lang="en">Disinformation</span>
+        <span class="tag" data-lang="es">Medios Digitales</span><span class="tag" data-lang="en">Digital Media</span>
         <span class="tag">The Economist</span>
       </div>
       <div class="hero-links">
         <a href="mailto:aarrese@unav.es" class="btn btn-white">✉ aarrese@unav.es</a>
-        <a href="https://portalcientifico.unav.edu/investigadores/327985/detalle" class="btn btn-outline" target="_blank" rel="noopener">
-          <span data-lang="es">Portal Científico UNAV</span>
-          <span data-lang="en">UNAV Research Portal</span>
-        </a>
-        <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" class="btn btn-outline" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="https://orcid.org/0000-0002-0586-4188" class="btn btn-outline" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" class="btn btn-outline" target="_blank">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-0586-4188" class="btn btn-outline" target="_blank">ORCID</a>
+        <a href="https://www.researchgate.net/profile/Angel-Arrese" class="btn btn-outline" target="_blank">ResearchGate</a>
+        <a href="https://portalcientifico.unav.edu/investigadores/327985/detalle" class="btn btn-outline" target="_blank"><span data-lang="es">Portal UNAV</span><span data-lang="en">UNAV Portal</span></a>
       </div>
     </div>
   </div>
@@ -537,525 +222,593 @@
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-num">2.879</div>
-      <div class="stat-label" data-lang="es">Citas (Google Scholar)</div>
-      <div class="stat-label" data-lang="en">Citations (Google Scholar)</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">26</div>
-      <div class="stat-label">h-index</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">51</div>
-      <div class="stat-label">i10-index</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">30+</div>
-      <div class="stat-label" data-lang="es">Artículos Q1/Q2</div>
-      <div class="stat-label" data-lang="en">Q1/Q2 Journal Articles</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">4</div>
-      <div class="stat-label" data-lang="es">Sexenios de Investigación</div>
-      <div class="stat-label" data-lang="en">Research Periods Accredited</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">12</div>
-      <div class="stat-label" data-lang="es">Tesis doctorales dirigidas</div>
-      <div class="stat-label" data-lang="en">PhD Theses Supervised</div>
-    </div>
+    <div class="stat"><div class="stat-num">2.879</div><div class="stat-label" data-lang="es">Citas</div><div class="stat-label" data-lang="en">Citations</div></div>
+    <div class="stat"><div class="stat-num">26</div><div class="stat-label">h-index</div></div>
+    <div class="stat"><div class="stat-num">51</div><div class="stat-label">i10-index</div></div>
+    <div class="stat"><div class="stat-num">27+</div><div class="stat-label" data-lang="es">Artículos Q1/Q2</div><div class="stat-label" data-lang="en">Q1/Q2 Articles</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label" data-lang="es">Libros</div><div class="stat-label" data-lang="en">Books</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label" data-lang="es">Sexenios</div><div class="stat-label" data-lang="en">Research Periods</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label" data-lang="es">Tesis dirigidas</div><div class="stat-label" data-lang="en">PhDs Supervised</div></div>
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="page-content">
 <main>
 
-  <!-- SOBRE MÍ / ABOUT -->
-  <section id="sobre-mi">
-
-    <!-- ES -->
-    <div data-lang="es">
-      <p class="section-label">Perfil académico</p>
-      <h2>Sobre mí</h2>
-      <div class="about-text">
-        <p>Soy Catedrático de Universidad en el Departamento de Marketing y Empresas de Comunicación de la
-        <a href="https://www.unav.edu/web/facultad-de-comunicacion" target="_blank" rel="noopener">Facultad de Comunicación de la Universidad de Navarra</a>
-        (acreditación efectiva desde septiembre de 2022). Doctor en Ciencias de la Información por la Universidad de Navarra (1994),
-        cuento con cuatro sexenios de investigación reconocidos por la ANECA (1997–2022).</p>
-        <p>Mi actividad investigadora se centra en la economía y gestión de los medios, el periodismo económico y financiero,
-        la historia de la prensa económica, y la desinformación y confianza en los medios. He publicado artículos en
-        <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Journalism</em>, <em>Discourse &amp; Society</em>,
-        <em>Media History</em>, <em>Mass Communication and Society</em>, <em>Public Understanding of Science</em> y otras
-        revistas internacionales de primer cuartil.</p>
-        <p>He sido Vicedecano de Investigación de la Facultad de Comunicación (2001–2010), Director del Programa de Doctorado
-        en Comunicación (2004–2007 y 2011–2018) y Coordinador del Grado en Marketing (2017–2023). Actualmente soy
-        Subdirector del Departamento de Marketing y Empresas de Comunicación e investigador del proyecto <strong>IBERIFIER Plus</strong>,
-        financiado por la Comisión Europea para la investigación sobre medios digitales y verificación de datos (2024–2027).</p>
-        <p>Soy consultor senior de <strong>Innovation Media Consulting Group</strong> y miembro del Consejo Asesor del Observatorio
-        de Medios de la Fundación HAZ y Ethosphera. Evalúo proyectos de investigación para la ANEP y el Servicio Alemán
-        de Intercambio Académico (DAAD).</p>
-      </div>
+<!-- ═══════════════════════════════════════════════ SOBRE MÍ -->
+<section id="sobre-mi">
+  <div data-lang="es"><p class="section-label">Perfil académico</p><h2>Sobre mí</h2>
+    <div class="about-text">
+      <p>Soy Catedrático de Universidad en el Departamento de Marketing y Empresas de Comunicación de la <a href="https://www.unav.edu/web/facultad-de-comunicacion" target="_blank">Facultad de Comunicación de la Universidad de Navarra</a> (acreditación efectiva desde septiembre de 2022). Doctor en Ciencias de la Información por la Universidad de Navarra (1994), cuento con cuatro sexenios de investigación reconocidos por la ANECA (1997–2022).</p>
+      <p>Mi actividad investigadora se centra en la economía y gestión de los medios, el periodismo económico y financiero, la historia de la prensa económica, y la desinformación y confianza en los medios. He publicado en <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Journalism</em>, <em>Discourse &amp; Society</em>, <em>Media History</em>, <em>Mass Communication and Society</em>, <em>Public Understanding of Science</em> y otras revistas Q1 internacionales.</p>
+      <p>He sido Vicedecano de Investigación (2001–2010), Director del Programa de Doctorado en Comunicación (2004–2007 y 2011–2018) y Coordinador del Grado en Marketing (2017–2023). Actualmente soy Subdirector del Departamento de Marketing y Empresas de Comunicación e investigador del proyecto <strong>IBERIFIER Plus</strong> (Comisión Europea, 2024–2027). Soy consultor senior de <strong>Innovation Media Consulting Group</strong> y miembro del Consejo Asesor del Observatorio de Medios de la Fundación HAZ y Ethosphera.</p>
     </div>
-
-    <!-- EN -->
-    <div data-lang="en">
-      <p class="section-label">Academic profile</p>
-      <h2>About me</h2>
-      <div class="about-text">
-        <p>I am Full Professor (Catedrático) in the Department of Marketing and Media Businesses at the
-        <a href="https://www.unav.edu/web/facultad-de-comunicacion" target="_blank" rel="noopener">School of Communication, University of Navarra</a>
-        (effective since September 2022). I hold a PhD in Information Sciences from the University of Navarra (1994)
-        and four six-year research periods accredited by ANECA (1997–2022).</p>
-        <p>My research focuses on media economics and management, economic and financial journalism, the history of the
-        business press, and disinformation and news trust. I have published in <em>Journalism Studies</em>,
-        <em>Journalism Practice</em>, <em>Journalism</em>, <em>Discourse &amp; Society</em>, <em>Media History</em>,
-        <em>Mass Communication and Society</em>, <em>Public Understanding of Science</em> and other Q1 international journals.</p>
-        <p>I served as Vice-Dean for Research at the School of Communication (2001–2010), Director of the PhD Programme in
-        Communication (2004–2007 and 2011–2018) and Coordinator of the Bachelor's Degree in Marketing (2017–2023).
-        Currently I am Deputy Head of the Department of Marketing and Media Businesses, and a researcher in
-        <strong>IBERIFIER Plus</strong>, an EU-funded project on digital media research and fact-checking (2024–2027).</p>
-        <p>I am a senior consultant at <strong>Innovation Media Consulting Group</strong> and a member of the Advisory Board
-        of the Media Observatory of Fundación HAZ and Ethosphera. I regularly evaluate research proposals for ANEP
-        and the German Academic Exchange Service (DAAD).</p>
-      </div>
+  </div>
+  <div data-lang="en"><p class="section-label">Academic profile</p><h2>About me</h2>
+    <div class="about-text">
+      <p>I am Full Professor (Catedrático) in the Department of Marketing and Media Businesses at the <a href="https://www.unav.edu/web/facultad-de-comunicacion" target="_blank">School of Communication, University of Navarra</a> (effective since September 2022). I hold a PhD in Information Sciences from the University of Navarra (1994) and four six-year research periods accredited by ANECA (1997–2022).</p>
+      <p>My research focuses on media economics and management, business and financial journalism, the history of the economic press, and disinformation and news trust. I have published in <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Journalism</em>, <em>Discourse &amp; Society</em>, <em>Media History</em>, <em>Mass Communication and Society</em>, <em>Public Understanding of Science</em> and other Q1 journals.</p>
+      <p>I served as Vice-Dean for Research (2001–2010), Director of the PhD Programme in Communication (2004–2007 and 2011–2018), and Coordinator of the Bachelor's in Marketing (2017–2023). Currently I am Deputy Head of the Department and a researcher in <strong>IBERIFIER Plus</strong> (EU-funded, 2024–2027). I am a senior consultant at <strong>Innovation Media Consulting Group</strong> and Advisory Board member of the Media Observatory, Fundación HAZ and Ethosphera.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- INVESTIGACIÓN / RESEARCH -->
-  <section id="investigacion">
-
-    <div data-lang="es">
-      <p class="section-label">Líneas de trabajo</p>
-      <h2>Áreas de Investigación</h2>
+<!-- ═══════════════════════════════════════════════ INVESTIGACIÓN -->
+<section id="investigacion">
+  <div data-lang="es"><p class="section-label">Líneas de trabajo</p><h2>Áreas de Investigación</h2></div>
+  <div data-lang="en"><p class="section-label">Research areas</p><h2>Research Interests</h2></div>
+  <div class="research-grid">
+    <div class="research-card">
+      <h3 data-lang="es">Periodismo Económico y Financiero</h3><h3 data-lang="en">Business &amp; Financial Journalism</h3>
+      <p data-lang="es">Historia, estructura y prácticas. Cobertura de crisis financieras y burbujas. Rol de las fuentes en la información económica. Transiciones políticas y periodismo económico.</p>
+      <p data-lang="en">History, structure and practices. Coverage of financial crises and bubbles. Role of sources in economic reporting. Political transitions and economic journalism.</p>
     </div>
-    <div data-lang="en">
-      <p class="section-label">Research areas</p>
-      <h2>Research Interests</h2>
+    <div class="research-card">
+      <h3 data-lang="es">Economía y Gestión de Medios</h3><h3 data-lang="en">Media Economics &amp; Management</h3>
+      <p data-lang="es">Mercados de la comunicación, gestión de productos, modelos de negocio digitales, paywalls y estrategias de ingresos. Audiencias y comportamiento del consumidor.</p>
+      <p data-lang="en">Communication markets, product management, digital business models, paywalls and revenue strategies. Audiences and consumer behaviour.</p>
     </div>
-
-    <div class="research-grid">
-      <div class="research-card">
-        <h3 data-lang="es">Periodismo Económico y Financiero</h3>
-        <h3 data-lang="en">Business &amp; Financial Journalism</h3>
-        <p data-lang="es">Historia, estructura y prácticas del periodismo económico. Cobertura de crisis financieras y burbujas. El rol de las fuentes en la información económica.</p>
-        <p data-lang="en">History, structure, and practices of business journalism. Coverage of financial crises and bubbles. The role of sources in economic reporting.</p>
-      </div>
-      <div class="research-card">
-        <h3 data-lang="es">Economía y Gestión de Medios</h3>
-        <h3 data-lang="en">Media Economics &amp; Management</h3>
-        <p data-lang="es">Mercados de la comunicación, gestión de productos informativos, modelos de negocio de la prensa y medios digitales. Paywalls y estrategias de ingresos.</p>
-        <p data-lang="en">Communication markets, media product management, press and digital media business models. Paywalls and revenue strategies.</p>
-      </div>
-      <div class="research-card">
-        <h3 data-lang="es">Marca Periodística y Brand Journalism</h3>
-        <h3 data-lang="en">News Branding &amp; Brand Journalism</h3>
-        <p data-lang="es">Valor de la marca en los medios. Anonimato editorial. Estudio de <em>The Economist</em> como caso paradigmático de marca periodística global.</p>
-        <p data-lang="en">Brand value in news media. Editorial anonymity. <em>The Economist</em> as a paradigmatic case of a global news brand.</p>
-      </div>
-      <div class="research-card">
-        <h3 data-lang="es">Desinformación y Confianza en los Medios</h3>
-        <h3 data-lang="en">Disinformation &amp; News Trust</h3>
-        <p data-lang="es">Exposición a noticias falsas, confianza institucional y no institucional en los medios. Análisis comparado entre países europeos. Infodemia y COVID-19.</p>
-        <p data-lang="en">Exposure to fake news, institutional and non-institutional news trust. Cross-national comparisons across EU countries. COVID-19 infodemic.</p>
-      </div>
-      <div class="research-card">
-        <h3 data-lang="es">Metáforas y Discurso Económico</h3>
-        <h3 data-lang="en">Economic Metaphors &amp; Discourse</h3>
-        <p data-lang="es">Uso de metáforas en la prensa durante crisis económicas (burbuja inmobiliaria, crisis del euro). Análisis comparado entre medios y países.</p>
-        <p data-lang="en">Use of metaphors in press coverage of economic crises (housing bubble, euro crisis). Comparative analysis across media and countries.</p>
-      </div>
-      <div class="research-card">
-        <h3 data-lang="es">Marketing e Inclusión</h3>
-        <h3 data-lang="en">Marketing &amp; Inclusion</h3>
-        <p data-lang="es">Diversidad e inclusión en la educación en marketing y en la comunicación comercial. Marketing con causa y responsabilidad social empresarial.</p>
-        <p data-lang="en">Diversity and inclusion in marketing education and commercial communication. Cause marketing and corporate social responsibility.</p>
-      </div>
+    <div class="research-card">
+      <h3 data-lang="es">Marca Periodística y Brand Journalism</h3><h3 data-lang="en">News Branding &amp; Brand Journalism</h3>
+      <p data-lang="es">Valor de la marca en medios. Anonimato editorial. <em>The Economist</em> como caso paradigmático. Repertorios de marcas informativas y confianza.</p>
+      <p data-lang="en">Brand value in news media. Editorial anonymity. <em>The Economist</em> as a paradigmatic case. News brand repertoires and trust.</p>
     </div>
-  </section>
-
-  <!-- PUBLICACIONES / PUBLICATIONS -->
-  <section id="publicaciones">
-    <div data-lang="es">
-      <p class="section-label">Investigación reciente</p>
-      <h2>Artículos Seleccionados</h2>
+    <div class="research-card">
+      <h3 data-lang="es">Desinformación y Confianza en los Medios</h3><h3 data-lang="en">Disinformation &amp; News Trust</h3>
+      <p data-lang="es">Fake news, dimensiones culturales de la exposición a desinformación. Confianza institucional y no institucional. Análisis comparado europeo. COVID-19 e infodemia.</p>
+      <p data-lang="en">Fake news, cultural dimensions of disinformation exposure. Institutional and non-institutional trust. Cross-national European analysis. COVID-19 infodemic.</p>
     </div>
-    <div data-lang="en">
-      <p class="section-label">Recent research</p>
-      <h2>Selected Journal Articles</h2>
+    <div class="research-card">
+      <h3 data-lang="es">Metáforas y Discurso Económico</h3><h3 data-lang="en">Economic Metaphors &amp; Discourse</h3>
+      <p data-lang="es">Uso de metáforas en la cobertura de crisis económicas. Burbuja inmobiliaria y crisis del euro. Análisis comparado entre países y medios.</p>
+      <p data-lang="en">Use of metaphors in economic crisis coverage. Housing bubble and euro crisis. Comparative analysis across countries and media outlets.</p>
     </div>
+    <div class="research-card">
+      <h3 data-lang="es">Marketing e Inclusión</h3><h3 data-lang="en">Marketing &amp; Inclusion</h3>
+      <p data-lang="es">Diversidad e inclusión en educación en marketing y comunicación comercial. Marketing con causa, RSC y activismo de marca.</p>
+      <p data-lang="en">Diversity and inclusion in marketing education and commercial communication. Cause marketing, CSR and brand activism.</p>
+    </div>
+  </div>
 
-    <ul class="pub-list">
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á., Kaufmann, J. &amp; Horst, S.-O.</p>
-        <p class="pub-title">"The size of news brand repertoires and its relationship to news trust, news interest and frequency of consumption"</p>
-        <p class="pub-meta"><em>Journal of Media Business Studies</em>, 22(4), 2025, 306–324.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"Institutional and Non-Institutional News Trust as Predictors of COVID-19 Beliefs: Evidence from three European countries"</p>
-        <p class="pub-meta"><em>Public Understanding of Science</em>, 33(4), 2024, 430–446.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"Cultural Dimensions of Fake News Exposure: A Cross-National Analysis Among European Union Countries"</p>
-        <p class="pub-meta"><em>Mass Communication and Society</em>, 27(5), 2024, 827–850.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á. &amp; Breiner, J.</p>
-        <p class="pub-title">"Spain's 'national character' in The Economist"</p>
-        <p class="pub-meta"><em>Communication &amp; Society</em>, 36(4), 2023, 21–34.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á. &amp; Vara-Miguel, A.</p>
-        <p class="pub-title">"The Ignoring of 'People' in the Journalistic Coverage of Economic Crises. The Housing Bubble and the Euro Crisis in Spain"</p>
-        <p class="pub-meta"><em>Journalism Practice</em>, 17(5), 2023, 930–947.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"'In the beginning were the data': economic journalism as/and data journalism"</p>
-        <p class="pub-meta"><em>Journalism Studies</em>, 23(4), 2022, 487–505.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"The Evolution of Anonymity in the Economist"</p>
-        <p class="pub-meta"><em>Media History</em>, 28(1), 2022, 111–124.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"The use of 'bubble' as an economic metaphor in the news: The case of the 'real estate bubble' in Spain"</p>
-        <p class="pub-meta"><em>Language &amp; Communication</em>, 78, 2021, 100–108.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"It's Anonymous. It's The Economist. The Journalistic and Business Value of Anonymity"</p>
-        <p class="pub-meta"><em>Journalism Practice</em>, 15(4), 2021, 471–488.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Rivera, R., Arrese, Á., Sádaba, C. &amp; Casado, L.</p>
-        <p class="pub-title">"Incorporating Diversity in Marketing Education: A Framework for Including All People in the Teaching and Learning Process"</p>
-        <p class="pub-meta"><em>Journal of Marketing Education</em>, 42(1), 2020, 37–47.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"The role of economic journalism in political transitions"</p>
-        <p class="pub-meta"><em>Journalism</em>, 18(3), 2017, 368–383.<span class="pub-badge">Q1</span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á. &amp; Vara, A.</p>
-        <p class="pub-title">"A comparative study of metaphors in press reporting of the Euro crisis"</p>
-        <p class="pub-meta"><em>Discourse &amp; Society</em>, 27(2), 2016, 133–155.<span class="pub-badge">Q1</span><span class="pub-cites">107 <span data-lang="es">citas</span><span data-lang="en">cit.</span></span></p>
-      </li>
-
-      <li class="pub-item">
-        <p class="pub-authors">Arrese, Á.</p>
-        <p class="pub-title">"From Gratis to Paywalls. A brief history of a retro-innovation in the press's business"</p>
-        <p class="pub-meta"><em>Journalism Studies</em>, 17(8), 2016, 1.051–1.067.<span class="pub-badge">Q1</span><span class="pub-cites">194 <span data-lang="es">citas</span><span data-lang="en">cit.</span></span></p>
-      </li>
-
+  <!-- PROYECTOS DE INVESTIGACIÓN -->
+  <div style="margin-top:2rem">
+    <div data-lang="es"><h2 id="proyectos" style="margin-top:0">Proyectos de Investigación Financiados</h2></div>
+    <div data-lang="en"><h2 style="margin-top:0">Funded Research Projects</h2></div>
+    <ul class="item-list">
+      <li><span class="item-year">2024–27</span> <strong>IBERIFIER Plus</strong>. Iberian Digital Media Research and Fact-Checking Hub. <em>European Commission, DIGITAL-2023-DEPLOY-04</em> (Ref. 101158511). Investigador.</li>
+      <li><span class="item-year">2021–23</span> <strong>IBERIFIER</strong>. Iberian Digital Media Research and Fact-Checking Hub. <em>European Commission, CEF-TC-2020-2</em>. Investigador.</li>
+      <li><span class="item-year">2015–18</span> <strong>Prensa y crisis económica en España.</strong> El papel del periodismo económico en el análisis de la crisis inmobiliaria. <em>Programa Estatal I+D+i, Ref. CSO2014-51817-R</em>. Investigador Principal.</li>
+      <li><span class="item-year">2014–16</span> <strong>Marcas tradicionales y nuevas marcas en los mercados de información online.</strong> <em>Proyecto PIUNA, Universidad de Navarra</em>. Investigador.</li>
+      <li><span class="item-year">2014–16</span> <strong>Crebiz Project.</strong> Business Development for Creative Industries. <em>Erasmus+, Universidades de Finlandia, Portugal, Reino Unido y España</em>. Country Researcher.</li>
+      <li><span class="item-year">2012–14</span> <strong>The Euro Crisis, Media Coverage and Perceptions of Europe within the EU.</strong> <em>Reuters Institute for the Study of Journalism, University of Oxford – John Fell OUP Fund</em>. Country Researcher.</li>
+      <li><span class="item-year">2004–07</span> <strong>La difusión de ideas económicas a través de la prensa.</strong> <em>PIUNA, Universidad de Navarra</em>. Investigador Principal.</li>
+      <li><span class="item-year">1998–01</span> <strong>Estructura y características del mercado de información económica en la UE.</strong> <em>PIUNA, Universidad de Navarra</em>. Investigador Principal.</li>
+      <li><span class="item-year">1998–00</span> <strong>Telecomunicaciones por cable en Navarra.</strong> <em>Telefónica</em>. Investigador.</li>
+      <li><span class="item-year">1994–97</span> <strong>Criterios de valoración del hogar informativo en el mercado de la información en España.</strong> <em>DGICYT, Ministerio de Educación y Ciencia</em>. Investigador.</li>
+      <li><span class="item-year">1991–93</span> <strong>Concentración informativa en España: Revistas.</strong> <em>DGICYT, Ministerio de Educación y Ciencia</em>. Investigador.</li>
     </ul>
+  </div>
+</section>
 
-    <p style="margin-top:1rem; font-family:'Arial',sans-serif; font-size:0.83rem; color:var(--muted);">
-      <span data-lang="es">→ Lista completa en </span>
-      <span data-lang="en">→ Full list on </span>
-      <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" target="_blank" rel="noopener">Google Scholar</a>
-      <span data-lang="es"> · </span><span data-lang="en"> · </span>
-      <a href="https://www.researchgate.net/profile/Angel-Arrese" target="_blank" rel="noopener">ResearchGate</a>
-    </p>
-  </section>
+<!-- ═══════════════════════════════════════════════ ARTÍCULOS -->
+<section id="articulos">
+  <div data-lang="es"><p class="section-label">Revistas científicas internacionales</p><h2>Artículos en Revistas Académicas</h2></div>
+  <div data-lang="en"><p class="section-label">International peer-reviewed journals</p><h2>Journal Articles</h2></div>
 
-  <!-- LIBROS / BOOKS -->
-  <section id="libros">
-    <div data-lang="es">
-      <p class="section-label">Monografías y ediciones</p>
-      <h2>Libros</h2>
-    </div>
-    <div data-lang="en">
-      <p class="section-label">Monographs and edited volumes</p>
-      <h2>Books</h2>
-    </div>
+  <!-- ARTÍCULOS DESTACADOS (visibles siempre) -->
+  <ul class="pub-list">
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á., Kaufmann, J. &amp; Horst, S.-O.</p>
+      <p class="pub-title"><a href="https://www.tandfonline.com/doi/full/10.1080/16522354.2024.2356295" target="_blank">"The size of news brand repertoires and its relationship to news trust, news interest and frequency of consumption"</a></p>
+      <p class="pub-meta"><em>Journal of Media Business Studies</em>, 22(4), 2025, 306–324.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1177/09636625231178530" target="_blank">"Institutional and Non-Institutional News Trust as Predictors of COVID-19 Beliefs: Evidence from three European countries"</a></p>
+      <p class="pub-meta"><em>Public Understanding of Science</em>, 33(4), 2024, 430–446.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1080/15205436.2023.2261655" target="_blank">"Cultural Dimensions of Fake News Exposure: A Cross-National Analysis Among European Union Countries"</a></p>
+      <p class="pub-meta"><em>Mass Communication and Society</em>, 27(5), 2024, 827–850.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á. &amp; Breiner, J.</p>
+      <p class="pub-title"><a href="https://revistas.unav.edu/index.php/communication-and-society/article/view/46451" target="_blank">"Spain's 'national character' in The Economist"</a></p>
+      <p class="pub-meta"><em>Communication &amp; Society</em>, 36(4), 2023, 21–34.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á. &amp; Vara-Miguel, A.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1080/17512786.2021.1983299" target="_blank">"The Ignoring of 'People' in the Journalistic Coverage of Economic Crises. The Housing Bubble and the Euro Crisis in Spain"</a></p>
+      <p class="pub-meta"><em>Journalism Practice</em>, 17(5), 2023, 930–947.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1080/1461670X.2021.1942114" target="_blank">"'In the beginning were the data': economic journalism as/and data journalism"</a></p>
+      <p class="pub-meta"><em>Journalism Studies</em>, 23(4), 2022, 487–505.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1080/13688804.2021.1888703" target="_blank">"The Evolution of Anonymity in the Economist"</a></p>
+      <p class="pub-meta"><em>Media History</em>, 28(1), 2022, 111–124.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1080/17512786.2020.1735489" target="_blank">"'It's Anonymous. It's The Economist'. The Journalistic and Business Value of Anonymity"</a></p>
+      <p class="pub-meta"><em>Journalism Practice</em>, 15(4), 2021, 471–488.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Arrese, Á.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1016/j.langcom.2021.01.004" target="_blank">"The use of 'bubble' as an economic metaphor in the news: The case of the 'real estate bubble' in Spain"</a></p>
+      <p class="pub-meta"><em>Language &amp; Communication</em>, 78, 2021, 100–108.<span class="pub-badge">Q1</span></p>
+    </li>
+    <li class="pub-item">
+      <p class="pub-authors">Rivera, R., Arrese, Á., Sádaba, C. &amp; Casado, L.</p>
+      <p class="pub-title"><a href="https://doi.org/10.1177/0273475319832513" target="_blank">"Incorporating Diversity in Marketing Education: A Framework for Including All People in the Teaching and Learning Process"</a></p>
+      <p class="pub-meta"><em>Journal of Marketing Education</em>, 42(1), 2020, 37–47.<span class="pub-badge">Q1</span></p>
+    </li>
+  </ul>
 
-    <div class="books-grid">
-      <div class="book-card">
-        <p class="book-year">2026</p>
-        <p class="book-title">Asuntos Públicos y Lobby. Radiografía de la profesión en España 2025</p>
-        <p class="book-publisher">APRI–Universidad de Navarra (con N. Rodríguez Salcedo, J. Rodríguez Virgili e I. Portilla)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2025</p>
-        <p class="book-title" data-lang="es">Estudio sobre el uso de redes sociales por parte de menores en España</p>
-        <p class="book-title" data-lang="en">Study on Social Media Use by Minors in Spain</p>
-        <p class="book-publisher">Universidad de Navarra (con P. San Miguel y otros)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2016</p>
-        <p class="book-title">How to Teach Entrepreneurship to Communication and Creative Industries Students</p>
-        <p class="book-publisher">ISCTE – Instituto Universitário de Lisboa (coed. con M. Grönlund y otros)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2011</p>
-        <p class="book-title" data-lang="es">Fundamentos de Periodismo Económico</p>
-        <p class="book-title" data-lang="en">Fundamentals of Economic Journalism</p>
-        <p class="book-publisher">Eunsa, Pamplona (con A. Vara-Miguel)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2010</p>
-        <p class="book-title" data-lang="es">Periodismo económico. Viejos y nuevos desafíos</p>
-        <p class="book-title" data-lang="en">Economic Journalism. Old and New Challenges</p>
-        <p class="book-publisher">Eunsa, Pamplona (coord.)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2008</p>
-        <p class="book-title" data-lang="es">¿Interesa la economía? Economía, medios de comunicación y ciudadanía</p>
-        <p class="book-title" data-lang="en">Is the Economy of Interest? Economics, Media and Citizenship</p>
-        <p class="book-publisher">CIE Dossat, Madrid</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2003</p>
-        <p class="book-title">Time and Media Markets</p>
-        <p class="book-publisher">Lawrence Erlbaum Associates, New Jersey (ed. con A. Albarran)</p>
-      </div>
-      <div class="book-card">
-        <p class="book-year">2001 / 2002</p>
-        <p class="book-title">Economic and Financial Press · Prensa económica. De la Lloyd's list al wsj.com</p>
-        <p class="book-publisher">Eunsa, Pamplona (Media Markets Monographs)</p>
-      </div>
+  <!-- MÁS ARTÍCULOS -->
+  <details>
+    <summary data-lang="es">▸ Ver todos los artículos académicos (27 publicaciones)</summary>
+    <summary data-lang="en">▸ See all journal articles (27 publications)</summary>
+    <div class="details-inner">
+      <ul class="pub-list">
+        <li class="pub-item">
+          <p class="pub-authors">Ríos-Rodríguez, R. &amp; Arrese, Á.</p>
+          <p class="pub-title"><a href="https://bjr.sbpjor.org.br/bjr/article/view/1445" target="_blank">"Economic Journalism and the Elitist Approach: A Persistent Pattern in the Use of Sources? The Spanish Press Coverage of The Economic Crisis (2008–2015)"</a></p>
+          <p class="pub-meta"><em>Brazilian Journalism Research</em>, 17(3), 2021, 764–791.<span class="pub-badge">Q2</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title"><a href="https://doi.org/10.1080/17512786.2016.1149490" target="_blank">"The role of economic journalism in political transitions"</a></p>
+          <p class="pub-meta"><em>Journalism</em>, 18(3), 2017, 368–383.<span class="pub-badge">Q1</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á., Vara, A., Salvatierra, S. &amp; Álvarez, J.L.</p>
+          <p class="pub-title">"La cobertura de la burbuja inmobiliaria en la prensa española (2003–2013). Un análisis de las opiniones de las fuentes políticas y expertos"</p>
+          <p class="pub-meta"><em>Revista de Comunicación</em>, 17(2), 2018, 41–65.<span class="pub-badge">Q2</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á. &amp; Vara, A.</p>
+          <p class="pub-title">"The Housing Bubble in the Spanish Press: A Media Discourse Captured by the Logic of Elite to Elite Communication Processes?"</p>
+          <p class="pub-meta"><em>The Political Economy of Communication</em>, 6(2), 2018, 74–93.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á. &amp; Kaufmann, J.</p>
+          <p class="pub-title"><a href="https://doi.org/10.1080/14241277.2016.1193155" target="_blank">"Legacy and native news brands online: Do they show different news consumption patterns?"</a></p>
+          <p class="pub-meta"><em>International Journal on Media Management</em>, 18(2), 2016, 75–97.<span class="pub-badge">Q1</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title"><a href="https://doi.org/10.1080/1461670X.2015.1027788" target="_blank">"From Gratis to Paywalls. A brief history of a retro-innovation in the press's business"</a></p>
+          <p class="pub-meta"><em>Journalism Studies</em>, 17(8), 2016, 1.051–1.067.<span class="pub-badge">Q1</span><span class="pub-cites">194 cit.</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á. &amp; Vara, A.</p>
+          <p class="pub-title"><a href="https://journals.sagepub.com/doi/abs/10.1177/0957926515611552" target="_blank">"A comparative study of metaphors in press reporting of the Euro crisis"</a></p>
+          <p class="pub-meta"><em>Discourse &amp; Society</em>, 27(2), 2016, 133–155.<span class="pub-badge">Q1</span><span class="pub-cites">107 cit.</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title"><a href="https://revistas.unav.edu/index.php/communication-and-society/article/view/35963" target="_blank">"Euro crisis metaphors in the Spanish press"</a></p>
+          <p class="pub-meta"><em>Communication and Society</em>, 28(2), 2015, 19–38.<span class="pub-badge">Q2</span><span class="pub-cites">73 cit.</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á. &amp; Vara, A.</p>
+          <p class="pub-title">"Alarma y alarmismo: medios de comunicación y crisis económica"</p>
+          <p class="pub-meta"><em>Estudios sobre el Mensaje Periodístico</em>, 20(2), 2014, 933–951.<span class="pub-badge">Q2</span></p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Algunas reconquistas pendientes del periodismo"</p>
+          <p class="pub-meta"><em>Revista de Comunicación</em>, 12, 2013, 197–219.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Reflexiones sobre el buen gobierno corporativo en las empresas periodísticas"</p>
+          <p class="pub-meta"><em>DOXA. Revista interdisciplinar de estudios de comunicación y ciencias sociales</em>, 4, 2006, 59–81.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Simplificación y rigor en el periodismo económico"</p>
+          <p class="pub-meta"><em>Cuadernos de Información</em>, 19, 2006, 42–49.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Algunas consideraciones sobre la gestión de productos y contenidos de los medios"</p>
+          <p class="pub-meta"><em>Comunicación y Sociedad</em>, XVII(2), 2004, 9–44.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Economía y medios de comunicación en la década de los setenta"</p>
+          <p class="pub-meta"><em>Comunicación y Sociedad</em>, XIII(2), 2000, 9–51.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"El desencuentro entre Periodismo y Economía"</p>
+          <p class="pub-meta"><em>Revista Empresa y Humanismo</em>, II(2), 2000, 309–335.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á.</p>
+          <p class="pub-title">"Marca y relaciones de autoridad en el mercado"</p>
+          <p class="pub-meta"><em>Comunicación y Sociedad</em>, XI(1), 1998, 91–124.</p>
+        </li>
+        <li class="pub-item">
+          <p class="pub-authors">Arrese, Á. &amp; Nieto, A.</p>
+          <p class="pub-title">"Productividad informativa"</p>
+          <p class="pub-meta"><em>Revista Situación</em>, nº 4, Banco Bilbao-Vizcaya, 1995, 237–259.</p>
+        </li>
+      </ul>
+      <p style="margin-top:1rem;font-family:Arial,sans-serif;font-size:.82rem;color:var(--muted);">
+        <span data-lang="es">→ Lista completa con citas en </span><span data-lang="en">→ Full list with citations on </span>
+        <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" target="_blank">Google Scholar</a>
+      </p>
     </div>
-  </section>
+  </details>
+</section>
 
-  <!-- DOCENCIA / TEACHING -->
-  <section id="docencia">
-    <div data-lang="es">
-      <p class="section-label">Actividad docente actual</p>
-      <h2>Docencia</h2>
+<!-- ═══════════════════════════════════════════════ LIBROS -->
+<section id="libros">
+  <div data-lang="es"><p class="section-label">Monografías y ediciones</p><h2>Libros</h2></div>
+  <div data-lang="en"><p class="section-label">Monographs and edited volumes</p><h2>Books</h2></div>
+  <div class="books-grid">
+    <div class="book-card">
+      <p class="book-year">2026</p>
+      <p class="book-title">Asuntos Públicos y Lobby. Radiografía de la profesión en España 2025</p>
+      <p class="book-publisher">Observatorio de Asuntos Públicos: APRI–Universidad de Navarra<br><small>(con N. Rodríguez Salcedo, J. Rodríguez Virgili e I. Portilla)</small></p>
     </div>
-    <div data-lang="en">
-      <p class="section-label">Current teaching</p>
-      <h2>Teaching</h2>
+    <div class="book-card">
+      <p class="book-year">2025</p>
+      <p class="book-title" data-lang="es">Estudio sobre el uso de redes sociales por parte de menores en España</p>
+      <p class="book-title" data-lang="en">Study on Social Media Use by Minors in Spain</p>
+      <p class="book-publisher">Servicio de Publicaciones, Universidad de Navarra<br><a href="https://doi.org/10.15581/028.00015" target="_blank" style="font-size:.77rem">DOI: 10.15581/028.00015</a></p>
     </div>
+    <div class="book-card">
+      <p class="book-year">2016</p>
+      <p class="book-title">How to Teach Entrepreneurship to Communication and Creative Industries Students</p>
+      <p class="book-publisher">ISCTE – Instituto Universitário de Lisboa<br><small>(coed. con M. Grönlund y otros)</small></p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2011</p>
+      <p class="book-title" data-lang="es">Fundamentos de Periodismo Económico</p>
+      <p class="book-title" data-lang="en">Fundamentals of Economic Journalism</p>
+      <p class="book-publisher"><a href="https://www.eunsa.es/autor/angel-arrese-reca/" target="_blank">Eunsa, Pamplona</a><br><small>(con A. Vara-Miguel)</small></p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2010</p>
+      <p class="book-title" data-lang="es">Periodismo económico. Viejos y nuevos desafíos</p>
+      <p class="book-title" data-lang="en">Economic Journalism. Old and New Challenges</p>
+      <p class="book-publisher"><a href="https://www.eunsa.es/autor/angel-arrese-reca/" target="_blank">Eunsa, Pamplona</a> (coord.)</p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2008</p>
+      <p class="book-title" data-lang="es">¿Interesa la economía? Economía, medios de comunicación y ciudadanía</p>
+      <p class="book-title" data-lang="en">Is the Economy of Interest? Economics, Media and Citizenship</p>
+      <p class="book-publisher">CIE Dossat, Madrid</p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2003</p>
+      <p class="book-title">Time and Media Markets</p>
+      <p class="book-publisher">Lawrence Erlbaum Associates, New Jersey<br><small>(ed. con A. Albarran)</small></p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2003</p>
+      <p class="book-title" data-lang="es">Empresa informativa y mercados de la comunicación. Estudios en honor del Prof. Alfonso Nieto Tamargo</p>
+      <p class="book-title" data-lang="en">Media Firms and Communication Markets. Studies in Honour of Prof. Alfonso Nieto Tamargo</p>
+      <p class="book-publisher">Eunsa, Pamplona (coord.)</p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2002</p>
+      <p class="book-title" data-lang="es">Prensa económica. De la Lloyd's list al wsj.com</p>
+      <p class="book-title" data-lang="en">Economic Press. From Lloyd's list to wsj.com</p>
+      <p class="book-publisher"><a href="https://www.eunsa.es/autor/angel-arrese-reca/" target="_blank">Eunsa, Pamplona</a></p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">2001</p>
+      <p class="book-title">Economic and Financial Press. From the beginnings to the first oil crisis</p>
+      <p class="book-publisher">Eunsa, Pamplona (Media Markets Monographs)</p>
+    </div>
+    <div class="book-card">
+      <p class="book-year">1995</p>
+      <p class="book-title" data-lang="es">La identidad de The Economist</p>
+      <p class="book-title" data-lang="en">The Identity of The Economist</p>
+      <p class="book-publisher"><a href="https://www.eunsa.es/autor/angel-arrese-reca/" target="_blank">Eunsa, Pamplona</a></p>
+    </div>
+  </div>
+</section>
 
-    <ul class="teach-list">
-      <li class="teach-item">
-        <p class="teach-course" data-lang="es">Periodismo Económico</p>
-        <p class="teach-course" data-lang="en">Economic Journalism</p>
-        <p class="teach-meta" data-lang="es">Grado · Facultad de Comunicación · Universidad de Navarra (desde 2011)</p>
-        <p class="teach-meta" data-lang="en">Undergraduate · School of Communication · University of Navarra (since 2011)</p>
-      </li>
-      <li class="teach-item">
-        <p class="teach-course" data-lang="es">Gestión de Marketing</p>
-        <p class="teach-course" data-lang="en">Marketing Management</p>
-        <p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2011)</p>
-        <p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2011)</p>
-      </li>
-      <li class="teach-item">
-        <p class="teach-course" data-lang="es">Finanzas para Marketing</p>
-        <p class="teach-course" data-lang="en">Finance for Marketing</p>
-        <p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2018)</p>
-        <p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2018)</p>
-      </li>
-      <li class="teach-item">
-        <p class="teach-course" data-lang="es">Políticas de Precios</p>
-        <p class="teach-course" data-lang="en">Pricing Policies</p>
-        <p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2022)</p>
-        <p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2022)</p>
-      </li>
-      <li class="teach-item">
-        <p class="teach-course">Big Data for Marketing</p>
-        <p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2023)</p>
-        <p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2023)</p>
-      </li>
-      <li class="teach-item">
-        <p class="teach-course" data-lang="es">Dirección de Marketing</p>
-        <p class="teach-course" data-lang="en">Marketing Management</p>
-        <p class="teach-meta" data-lang="es">Máster Ejecutivo en Gestión de Empresas de Comunicación (MEGEC) · Universidad de Navarra (desde 2012)</p>
-        <p class="teach-meta" data-lang="en">Executive Master's in Media Business Management (MEGEC) · University of Navarra (since 2012)</p>
-      </li>
-    </ul>
-  </section>
+<!-- ═══════════════════════════════════════════════ CAPÍTULOS -->
+<section id="capitulos">
+  <div data-lang="es"><p class="section-label">Contribuciones en obras colectivas</p><h2>Capítulos de Libros</h2></div>
+  <div data-lang="en"><p class="section-label">Contributions to collective works</p><h2>Book Chapters</h2></div>
+
+  <!-- Capítulos recientes visibles -->
+  <ul class="item-list">
+    <li><span class="item-year">2025</span> <strong>"Hacia una clarificación de los rasgos configuradores de los medios y organizaciones periodísticas"</strong>, en Pujol, J. y Díaz Dorronsoro, J.M. (eds.), <em>Comunicazione, Etica e Opinione Pubblica</em>, EDUSC, Roma, pp. 43–56.</li>
+    <li><span class="item-year">2025</span> <strong>"Beyond Diversity: Towards a Disability Inclusive Marketing"</strong> (con C. Sádaba y L. Casado), en Gilani, H. (ed.), <em>Decolonizing Marketing Theory and Practice</em>, Routledge, London, pp. 97–113.</li>
+    <li><span class="item-year">2024</span> <strong>"The historical evolution of economic, business, and financial journalism"</strong>, en Weber, J. y Dunham, R.S. (eds.), <em>The Routledge Companion to Business Journalism</em>, Routledge, New York, pp. 83–95.</li>
+    <li><span class="item-year">2024</span> <strong>"Vive la Différence?: Business journalism in its global uniformity and variety"</strong>, en Weber, J. y Dunham, R.S. (eds.), <em>The Routledge Companion to Business Journalism</em>, Routledge, New York, pp. 325–339.</li>
+    <li><span class="item-year">2024</span> <strong>"Spain: A Fast-Changing Media Landscape"</strong> (con A. Vara-Miguel), en Schapals, A.K. y Pentzold, C. (eds.), <em>Media Compass</em>, Wiley-Blackwell, London, pp. 138–149.</li>
+  </ul>
+
+  <details>
+    <summary data-lang="es">▸ Ver todos los capítulos de libros (30+ contribuciones)</summary>
+    <summary data-lang="en">▸ See all book chapters (30+ contributions)</summary>
+    <div class="details-inner">
+      <ul class="item-list">
+        <li><span class="item-year">2020</span> <strong>"The Economist in the Twentieth Century"</strong>, en Conboy, M. y Bingham, A. (eds.), <em>The Edinburgh History of British and Irish Press, Vol. 3</em>, Edinburgh University Press, pp. 208–209.</li>
+        <li><span class="item-year">2019</span> <strong>"Consumer Demand and Audience Behavior"</strong> (con M. Medina y A. Sánchez-Tabernero), en Albarran, A. (ed.), <em>A Research Agenda for Media Economics</em>, Edward Elgar, pp. 59–76.</li>
+        <li><span class="item-year">2019</span> <strong>"La 'burbuja' como metáfora económica"</strong>, en González Ruiz, R. et al. (eds.), <em>Lengua, Cultura, Discurso</em>, Eunsa, Pamplona, pp. 117–138.</li>
+        <li><span class="item-year">2018</span> <strong>"Austerity Policies in the European Press"</strong>, en Basu, L. et al. (eds.), <em>The Media and Austerity. Comparative Perspectives</em>, Routledge, London, pp. 114–127.</li>
+        <li><span class="item-year">2017</span> <strong>"The rise of brand journalism"</strong> (con F.J. Pérez Latre), en Siegert, G. et al. (eds.), <em>Commercial Communication in the Digital Age</em>, De Gruyter Mouton, Berlin, pp. 121–139.</li>
+        <li><span class="item-year">2016</span> <strong>"Contents as Products in Media Markets"</strong> (con M. Medina y A. Sánchez-Tabernero), en Lowe, G. y Brown, C. (eds.), <em>Managing Media Firms and Industries</em>, Springer, pp. 243–259.</li>
+        <li><span class="item-year">2016</span> <strong>"Periodismo y economía"</strong> (con A. Vara), en Sobrados León, M. (ed.), <em>Estudios de Periodismo Político y Económico</em>, Fragua, Madrid, pp. 47–80.</li>
+        <li><span class="item-year">2016</span> <strong>"Retroperiodismo"</strong>, en Rodríguez Rodríguez, J.M. (coord.), <em>Retroperiodismo</em>, SEP-Ediciones de la Universidad de San Jorge, Zaragoza, pp. 15–28.</li>
+        <li><span class="item-year">2016</span> <strong>"Breve historia de los paywalls"</strong>, en <em>La Prensa Digital en España 2016</em>, IME-Carat, Madrid, pp. 97–121.</li>
+        <li><span class="item-year">2015</span> <strong>"Spain. No Illusions"</strong>, en Schifferes, S. y Roberts, R. (eds.), <em>The Media and Financial Crisis</em>, Routledge, London, pp. 87–102.</li>
+        <li><span class="item-year">2015</span> <strong>"Divergent perspectives? Financial newspapers and the general interest press"</strong> (con A. Vara), en Picard, R. (ed.), <em>The Euro Crisis in the News</em>, RIJS-Tauris, London, pp. 149–176.</li>
+        <li><span class="item-year">2012</span> <strong>"El contexto de la relación entre medios de comunicación y reputación corporativa en España"</strong>, en McCombs, M. y Martín Algarra, M. (eds.), <em>Communication and Social Life</em>, Eunsa, pp. 341–366.</li>
+        <li><span class="item-year">2011</span> <strong>"Corporate Reputation and the News Media in Spain"</strong> (con M. Baigorri), en Carroll, C.E. (ed.), <em>Corporate Reputation and the News Media Around the World</em>, Routledge, New York, pp. 168–192.</li>
+        <li><span class="item-year">2009</span> <strong>"Media in Spain. Three Decades of Transformation"</strong> (con J.P. Artero y M. Herrero), en Albarran, A. (ed.), <em>The Handbook of Spanish Language Media</em>, Routledge, pp. 17–33.</li>
+        <li><span class="item-year">2005</span> <strong>"Issues in media product management"</strong>, en Albarran, A. et al. (eds.), <em>Handbook of Media Management and Economics</em>, Lawrence Erlbaum, pp. 181–201.<span class="pub-cites" style="margin-left:.4rem">97 cit.</span></li>
+        <li><span class="item-year">2005</span> <strong>"Corporate Governance and News Governance in Economic and Financial Media"</strong>, en Picard, R. (ed.), <em>Corporate Governance of Media Companies</em>, JIBS, Jönköping, pp. 77–125.</li>
+        <li><span class="item-year">2005</span> <strong>"Spain: A Market in Turmoil"</strong> (con M. Herrero), en Brown, A. y Picard, R. (eds.), <em>Digital Terrestrial Television in Europe</em>, Lawrence Erlbaum, pp. 181–202.</li>
+        <li><span class="item-year">2004</span> <strong>"Información económica y de negocios"</strong>, en Fernández del Moral, J. (ed.), <em>Periodismo especializado</em>, Ariel, Barcelona, pp. 285–315.<span class="pub-cites" style="margin-left:.4rem">190 cit.</span></li>
+        <li><span class="item-year">2002</span> <strong>"Competition between New and Old Media in Economic and Financial News Markets"</strong> (con M. Medina), en Picard, R. (ed.), <em>Media Firms: Structures, Operations and Performance</em>, Lawrence Erlbaum, pp. 59–75.</li>
+        <li><span class="item-year">1995</span> <strong>"ISDN in Spain"</strong>, en A.A.V.V., <em>ISDN in the USA, Japan, Singapore and Europe</em>, European Institute for the Media, Dusseldorf.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════ TESIS -->
+<section id="tesis">
+  <div data-lang="es"><p class="section-label">Supervisión doctoral</p><h2>Dirección de Tesis Doctorales</h2></div>
+  <div data-lang="en"><p class="section-label">Doctoral supervision</p><h2>PhD Theses Supervised</h2></div>
+
+  <!-- En curso -->
+  <p style="font-family:Arial,sans-serif;font-size:.83rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;" data-lang="es">En curso</p>
+  <p style="font-family:Arial,sans-serif;font-size:.83rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;" data-lang="en">In progress</p>
+  <div class="thesis-item"><span class="thesis-author">Álvaro Moreno Ramírez</span> · <span class="thesis-title">Instituto Empresa y Humanismo</span> <span class="thesis-meta">(desde 2018)</span></div>
+  <div class="thesis-item"><span class="thesis-author">Carolina Ezcurra</span> · <span class="thesis-title">Facultad de Comunicación, Universidad de Navarra</span> <span class="thesis-meta">(desde 2019)</span></div>
+  <div class="thesis-item"><span class="thesis-author">Alexander Blanco Chang</span> · <span class="thesis-title">Facultad de Comunicación, Universidad de Navarra</span> <span class="thesis-meta">(desde 2023)</span></div>
+  <div class="thesis-item"><span class="thesis-author">Sven-Ove Horst</span> · <span class="thesis-title">Facultad de Comunicación, Universidad de Navarra</span> <span class="thesis-meta">(desde 2024)</span></div>
+
+  <details style="margin-top:1rem">
+    <summary data-lang="es">▸ Ver tesis doctorales concluidas (12 tesis)</summary>
+    <summary data-lang="en">▸ See completed PhD theses (12 theses)</summary>
+    <div class="details-inner">
+      <div class="thesis-item"><span class="thesis-author">Estela Santos Mazo</span> (2025) · <span class="thesis-title">"Limitaciones y problemas de cobertura en el Periodismo de Datos. El caso de la cobertura periodística de la pandemia del Covid-19"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Mª Ángeles Burguera</span> (2021, codirección con A. Vara) · <span class="thesis-title">"Dimensiones de gestión de la marca periodística desde la perspectiva de las audiencias: un análisis comparado"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Anya Stiglitz</span> (2020) · <span class="thesis-title">"Mis- and Disinformation online: a Taxonomy of Solutions"</span> · <span class="thesis-meta">Sobresaliente cum laude · Premio Extraordinario de Doctorado · Doctorado Internacional</span></div>
+      <div class="thesis-item"><span class="thesis-author">Antonio Mª Fernández Torregrosa</span> (2020) · <span class="thesis-title">"Las Influencias de entorno en el proceso de decisión del preuniversitario: el caso de la Universidad de Navarra"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Jürg Kauffman</span> (2016) · <span class="thesis-title">"La transformación digital de la agencia de publicidad. Análisis de caso español"</span> · <span class="thesis-meta">Sobresaliente cum laude · Premio Extraordinario de Doctorado</span></div>
+      <div class="thesis-item"><span class="thesis-author">Glaucia Noguera</span> (2011) · <span class="thesis-title">"Quatro décadas de jornalismo ambiental"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Manuel Baigorri</span> (2010, codirección con A. Vara) · <span class="thesis-title">"Business Week (1929–2009). Periodismo, Negocios e Innovación Tecnológica"</span> · <span class="thesis-meta">Sobresaliente cum laude · Primer Accésit, Premio Lorenzo Gomis (SEP)</span></div>
+      <div class="thesis-item"><span class="thesis-author">Gonzalo Robles González</span> (2006) · <span class="thesis-title">"La empresa informativa como empresa de tendencia: la incorporación de los principios editoriales"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Montserrat Díaz</span> (2005) · <span class="thesis-title">"Modelo de gestión de marketing de las agencias de publicidad"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Pedro Calvo</span> (2003) · <span class="thesis-title">"La influencia del periodismo económico británico en el periodismo español. El caso del Financial Times y Expansión"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Marieke De Mooij</span> (2001) · <span class="thesis-title">"Convergence and Divergence in Consumer Behavior. Consequences for Global Marketing and Advertising"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+      <div class="thesis-item"><span class="thesis-author">Pilar Buil Gazol</span> (2001) · <span class="thesis-title">"Fundamentos para un modelo de coordinación entre las relaciones públicas y el marketing"</span> · <span class="thesis-meta">Sobresaliente cum laude</span></div>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════ DOCENCIA -->
+<section id="docencia">
+  <div data-lang="es"><p class="section-label">Actividad docente actual</p><h2>Docencia</h2></div>
+  <div data-lang="en"><p class="section-label">Current teaching</p><h2>Teaching</h2></div>
+
+  <ul class="teach-list">
+    <li class="teach-item"><p class="teach-course" data-lang="es">Periodismo Económico</p><p class="teach-course" data-lang="en">Economic Journalism</p><p class="teach-meta" data-lang="es">Grado · Facultad de Comunicación · Universidad de Navarra (desde 2011)</p><p class="teach-meta" data-lang="en">Undergraduate · School of Communication · University of Navarra (since 2011)</p></li>
+    <li class="teach-item"><p class="teach-course" data-lang="es">Gestión de Marketing</p><p class="teach-course" data-lang="en">Marketing Management</p><p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2011)</p><p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2011)</p></li>
+    <li class="teach-item"><p class="teach-course" data-lang="es">Finanzas para Marketing</p><p class="teach-course" data-lang="en">Finance for Marketing</p><p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2018)</p><p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2018)</p></li>
+    <li class="teach-item"><p class="teach-course" data-lang="es">Políticas de Precios</p><p class="teach-course" data-lang="en">Pricing Policies</p><p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2022)</p><p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2022)</p></li>
+    <li class="teach-item"><p class="teach-course">Big Data for Marketing</p><p class="teach-meta" data-lang="es">Grado en Marketing · Universidad de Navarra (desde 2023)</p><p class="teach-meta" data-lang="en">Bachelor's in Marketing · University of Navarra (since 2023)</p></li>
+    <li class="teach-item"><p class="teach-course" data-lang="es">Dirección de Marketing</p><p class="teach-course" data-lang="en">Marketing Management</p><p class="teach-meta" data-lang="es">MEGEC · Universidad de Navarra (desde 2012)</p><p class="teach-meta" data-lang="en">Executive Master's MEGEC · University of Navarra (since 2012)</p></li>
+  </ul>
+
+  <details>
+    <summary data-lang="es">▸ Ver historial docente completo (1990–2026)</summary>
+    <summary data-lang="en">▸ See full teaching history (1990–2026)</summary>
+    <div class="details-inner">
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;" data-lang="es">Licenciatura / Grado</p>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin-bottom:.5rem;" data-lang="en">Undergraduate</p>
+      <ul class="item-list">
+        <li><span class="item-year">1990–92</span> Introducción a la Economía · Facultad de Económicas, Universidad de Navarra</li>
+        <li><span class="item-year">1992–94</span> Economía · Facultad de Comunicación, Universidad de Navarra</li>
+        <li><span class="item-year">1994–04</span> Marketing · Facultad de Comunicación, Universidad de Navarra</li>
+        <li><span class="item-year">1996</span> Introducción a la Publicidad · Universidad de Navarra</li>
+        <li><span class="item-year">1996–02</span> Marketing Especializado · Universidad de Navarra</li>
+        <li><span class="item-year">1997–99</span> Estructura de la Información Periodística · Universidad de Navarra</li>
+        <li><span class="item-year">1997–99</span> Marketing Audiovisual · Universidad de Navarra</li>
+        <li><span class="item-year">2004–11</span> Periodismo Económico (Profesor Agregado) · Universidad de Navarra</li>
+        <li><span class="item-year">2004–18</span> Marketing (Profesor Agregado / Titular) · Universidad de Navarra</li>
+        <li><span class="item-year">2011→</span> Periodismo Económico (Profesor Titular) · Universidad de Navarra</li>
+        <li><span class="item-year">2011→</span> Gestión de Marketing · Universidad de Navarra</li>
+        <li><span class="item-year">2018→</span> Finanzas para Marketing · Universidad de Navarra</li>
+        <li><span class="item-year">2022→</span> Políticas de Precios · Universidad de Navarra</li>
+        <li><span class="item-year">2023→</span> Big Data for Marketing · Universidad de Navarra</li>
+      </ul>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin:.9rem 0 .4rem;" data-lang="es">Posgrado y Máster</p>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin:.9rem 0 .4rem;" data-lang="en">Postgraduate &amp; Masters</p>
+      <ul class="item-list">
+        <li><span class="item-year">2001→</span> Dirección de Marketing · MEGEC / MGEC · Universidad de Navarra</li>
+        <li><span class="item-year">2004–06</span> Dirección de Marketing · Máster en Comunicación Política y Corporativa (MCPC) · Universidad de Navarra</li>
+        <li><span class="item-year">2008–15</span> Comunicación Integrada de Marketing · Máster en Estrategia y Creatividad Publicitarias · Universitat Ramon Llull, Barcelona</li>
+        <li><span class="item-year">2015–20</span> Marketing y Sociedad · Máster en Gobierno y Cultura de las Organizaciones · Instituto Empresa y Humanismo, Universidad de Navarra</li>
+        <li><span class="item-year">2018–23</span> Dirección de Marketing + Big Data · Máster en Reputación Corporativa (MERC) · Universidad de Navarra</li>
+        <li><span class="item-year">1999</span> Comunicación Institucional (invitado) · Universidad Austral, Buenos Aires</li>
+        <li><span class="item-year">1999–07</span> Jornalismo Econômico · Master em Jornalismo para Editores · Centro de Extensão Universitaria, São Paulo</li>
+        <li><span class="item-year">2009–10</span> Jornalismo Econômico · Master em Jornalismo Econômico · IICS, São Paulo</li>
+      </ul>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin:.9rem 0 .4rem;" data-lang="es">Estancias docentes en el extranjero</p>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;font-weight:bold;color:var(--navy);margin:.9rem 0 .4rem;" data-lang="en">Visiting Professor positions</p>
+      <ul class="item-list">
+        <li><span class="item-year">1992</span> European Institute for the Media, University of Manchester (UK)</li>
+        <li><span class="item-year">2000</span> Facultad de Ciencias de la Información, Universidad Austral, Buenos Aires</li>
+        <li><span class="item-year">2001</span> Department of Radio, Television and Film, University of North Texas, Denton (USA) · <em>Beca Charn Uswachoke</em></li>
+        <li><span class="item-year">2002</span> Facultad de Ciencias de la Información, Universidad de Piura, Perú</li>
+        <li><span class="item-year">2004</span> Facultad de Comunicación, Universidad de La Sabana, Colombia</li>
+        <li><span class="item-year">2009, 2016</span> School of Journalism, University of North Carolina · <em>Carnegie Mellon &amp; Knight Foundation Grant</em></li>
+        <li><span class="item-year">2018</span> Facultad de Comunicación, Universidad de Los Andes, Chile</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════════════════════════════════════════ DIVULGACIÓN -->
+<section id="divulgacion">
+  <div data-lang="es"><p class="section-label">Artículos de opinión y divulgación</p><h2>Artículos de Divulgación</h2></div>
+  <div data-lang="en"><p class="section-label">Opinion and outreach articles</p><h2>Outreach Articles</h2></div>
+
+  <ul class="item-list">
+    <li><span class="item-year">2024</span> <strong>"Activismo de marca. Entre el beneficio, el propósito y la acción pública"</strong> (con N. Rodríguez Salcedo), <em>Nuevas Tendencias</em>, nº 112.</li>
+    <li><span class="item-year">2022</span> <strong>"La hora del marketing auténticamente inclusivo"</strong> (con L. Casado), <em>Nuevas Tendencias</em>, nº 108.</li>
+    <li><span class="item-year">2021</span> <strong>"La infodemia del Covid-19"</strong>, <em>Nuevas Tendencias</em>, nº 106.</li>
+    <li><span class="item-year">2017</span> <strong>"La crisis económica española. De la burbuja a la recuperación"</strong>, <em>Nuevas Tendencias</em>, nº 99.</li>
+    <li><span class="item-year">2016</span> <strong>"Política post-factual y sociedad post-mediática"</strong>, <em>Nuevas Tendencias</em>, nº 97.</li>
+    <li><span class="item-year">2015</span> <strong>"¡Sorpresa! El Financial Times es… japonés"</strong>, <em><a href="https://blogs.elconfidencial.com/economia/tribuna/2015-07-27/sorpresa-el-financial-times-es-japones_943542/" target="_blank">El Confidencial</a></em>, 27/07/2015.</li>
+  </ul>
+
+  <details>
+    <summary data-lang="es">▸ Ver más artículos de divulgación y blog EyH Ideas</summary>
+    <summary data-lang="en">▸ See more outreach articles and EyH Ideas blog posts</summary>
+    <div class="details-inner">
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:.8rem" data-lang="es">Artículos publicados en el blog <strong>EyH Ideas</strong> del Instituto Empresa y Humanismo (2014–2021):</p>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:.8rem" data-lang="en">Articles published on the <strong>EyH Ideas</strong> blog, Instituto Empresa y Humanismo (2014–2021):</p>
+      <ul class="item-list" style="font-size:.82rem">
+        <li><span class="item-year">2021</span> <a href="https://insteyh.wordpress.com/2021/11/02/el-desafio-de-lo-hibrido/" target="_blank">"El desafío de lo híbrido"</a></li>
+        <li><span class="item-year">2019</span> <a href="https://insteyh.wordpress.com/2019/03/16/el-tiempo-del-homo-digitalis/" target="_blank">"El tiempo del homo digitalis"</a></li>
+        <li><span class="item-year">2018</span> <a href="https://insteyh.wordpress.com/2018/04/29/etica-tecnologia-e-innovacion-responsable/" target="_blank">"Tecnología e innovación responsables"</a></li>
+        <li><span class="item-year">2018</span> <a href="https://insteyh.wordpress.com/2018/03/17/transparencia-o-claridad/" target="_blank">"¿Transparencia o claridad?"</a></li>
+        <li><span class="item-year">2018</span> <a href="https://insteyh.wordpress.com/2018/02/10/recordando-a-drucker/" target="_blank">"Recordando a Drucker"</a></li>
+        <li><span class="item-year">2017</span> <a href="https://insteyh.wordpress.com/2017/04/23/la-postverdad-el-efecto-avestruz-y-otros-fenomenos/" target="_blank">"La postverdad, el efecto avestruz y otros fenómenos"</a></li>
+        <li><span class="item-year">2017</span> <a href="https://insteyh.wordpress.com/2017/01/15/el-populismo-y-la-gran-empresa/" target="_blank">"El populismo y la gran empresa"</a></li>
+        <li><span class="item-year">2016</span> <a href="https://insteyh.wordpress.com/2016/10/31/populismo-cultural-populismo-economico-y-democracia/" target="_blank">"Populismo cultural, populismo económico y democracia"</a></li>
+        <li><span class="item-year">2016</span> <a href="https://insteyh.wordpress.com/2016/09/26/trabajo-tecnologia-y-humanismo/" target="_blank">"Trabajo, tecnología y humanismo"</a></li>
+        <li><span class="item-year">2015</span> <a href="https://insteyh.wordpress.com/2015/11/30/la-hipersensibilidad-universitaria/" target="_blank">"La hipersensibilidad universitaria"</a></li>
+        <li><span class="item-year">2015</span> <a href="https://insteyh.wordpress.com/2015/08/07/la-desigualdad-de-piketty/" target="_blank">"La desigualdad de Piketty"</a></li>
+        <li><span class="item-year">2014</span> <a href="https://insteyh.wordpress.com/2014/10/30/volver-a-pensar/" target="_blank">"Volver a pensar"</a></li>
+      </ul>
+      <p style="font-family:Arial,sans-serif;font-size:.82rem;color:var(--muted);margin-top:.9rem;margin-bottom:.5rem"><strong data-lang="es">Artículos en prensa:</strong><strong data-lang="en">Press articles:</strong></p>
+      <ul class="item-list" style="font-size:.82rem">
+        <li><span class="item-year">2008</span> "Los fantasmas de Madoff", <em>Expansión</em>, 19 dic. 2008</li>
+        <li><span class="item-year">2007</span> "Y además, Murdoch", <em>Expansión</em>, 3 jul. 2007</li>
+        <li><span class="item-year">2007</span> <a href="https://chasqui.ciespal.org/index.php/chasqui/article/view/319" target="_blank">"En defensa del periodismo profesional"</a>, <em>Chasqui</em>, nº 100, dic. 2007</li>
+        <li><span class="item-year">2003</span> "¿Dónde estaban los medios?", <em>Expansión</em>, enero 2003</li>
+        <li><span class="item-year">2000</span> "Un siglo de información económica", <em>Expansión</em>, enero 2000 (Número Especial Siglo XX)</li>
+        <li><span class="item-year">1998</span> "El hipersector de la Comunicación", <em>Expansión</em>, febrero 1998</li>
+        <li><span class="item-year">1997</span> "Medios de comunicación en 1998", <em>Expansión</em>, diciembre 1997</li>
+      </ul>
+    </div>
+  </details>
+</section>
 
 </main>
 
-<!-- SIDEBAR -->
+<!-- ═══════════════════════════════════════════════ SIDEBAR -->
 <aside class="sidebar">
 
-  <!-- CONTACTO -->
   <div class="card" id="contacto">
     <h3>Contacto / Contact</h3>
-    <div class="contact-item">
-      <span class="ci-icon">✉</span>
-      <a href="mailto:aarrese@unav.es">aarrese@unav.es</a>
-    </div>
-    <div class="contact-item">
-      <span class="ci-icon">📞</span>
-      <span>+34 948 425 655</span>
-    </div>
-    <div class="contact-item">
-      <span class="ci-icon">📍</span>
-      <span data-lang="es">Dpto. de Marketing y Empresas de Comunicación<br>Facultad de Comunicación<br>Universidad de Navarra<br>31009 Pamplona, España</span>
+    <div class="contact-item"><span class="ci-icon">✉</span><a href="mailto:aarrese@unav.es">aarrese@unav.es</a></div>
+    <div class="contact-item"><span class="ci-icon">📞</span><span>+34 948 425 655</span></div>
+    <div class="contact-item"><span class="ci-icon">📍</span>
+      <span data-lang="es">Dpto. Marketing y Empresas de Comunicación<br>Facultad de Comunicación<br>Universidad de Navarra<br>31009 Pamplona, España</span>
       <span data-lang="en">Dept. of Marketing and Media Businesses<br>School of Communication<br>University of Navarra<br>31009 Pamplona, Spain</span>
     </div>
   </div>
 
-  <!-- PERFILES -->
   <div class="card">
-    <h3 data-lang="es">Perfiles Online</h3>
-    <h3 data-lang="en">Online Profiles</h3>
+    <h3 data-lang="es">Perfiles Online</h3><h3 data-lang="en">Online Profiles</h3>
     <div class="profile-links">
-      <a href="https://portalcientifico.unav.edu/investigadores/327985/detalle" class="profile-link" target="_blank" rel="noopener">
-        🏛 <span data-lang="es">Portal Científico UNAV</span><span data-lang="en">UNAV Research Portal</span>
-      </a>
-      <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" class="profile-link" target="_blank" rel="noopener">
-        🎓 Google Scholar
-      </a>
-      <a href="https://orcid.org/0000-0002-0586-4188" class="profile-link" target="_blank" rel="noopener">
-        🔗 ORCID · 0000-0002-0586-4188
-      </a>
-      <a href="https://www.researchgate.net/profile/Angel-Arrese" class="profile-link" target="_blank" rel="noopener">
-        🔬 ResearchGate
-      </a>
-      <a href="https://unav.academia.edu/AngelArrese" class="profile-link" target="_blank" rel="noopener">
-        📚 Academia.edu
-      </a>
+      <a href="https://portalcientifico.unav.edu/investigadores/327985/detalle" class="profile-link" target="_blank">🏛 <span data-lang="es">Portal Científico UNAV</span><span data-lang="en">UNAV Research Portal</span></a>
+      <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" class="profile-link" target="_blank">🎓 Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-0586-4188" class="profile-link" target="_blank">🔗 ORCID 0000-0002-0586-4188</a>
+      <a href="https://www.researchgate.net/profile/Angel-Arrese" class="profile-link" target="_blank">🔬 ResearchGate</a>
+      <a href="https://unav.academia.edu/AngelArrese" class="profile-link" target="_blank">📚 Academia.edu</a>
     </div>
   </div>
 
-  <!-- MÉTRICAS -->
   <div class="card">
-    <h3 data-lang="es">Métricas de Investigación</h3>
-    <h3 data-lang="en">Research Metrics</h3>
+    <h3 data-lang="es">Métricas (Google Scholar)</h3><h3 data-lang="en">Metrics (Google Scholar)</h3>
     <div class="metrics-row">
-      <div class="metric-chip">
-        <div class="metric-chip-num">2.879</div>
-        <div class="metric-chip-label" data-lang="es">Citas</div>
-        <div class="metric-chip-label" data-lang="en">Citations</div>
-      </div>
-      <div class="metric-chip">
-        <div class="metric-chip-num">26</div>
-        <div class="metric-chip-label">h-index</div>
-      </div>
-      <div class="metric-chip">
-        <div class="metric-chip-num">51</div>
-        <div class="metric-chip-label">i10-index</div>
-      </div>
+      <div class="metric-chip"><div class="metric-chip-num">2.879</div><div class="metric-chip-label" data-lang="es">Citas</div><div class="metric-chip-label" data-lang="en">Citations</div></div>
+      <div class="metric-chip"><div class="metric-chip-num">26</div><div class="metric-chip-label">h-index</div></div>
+      <div class="metric-chip"><div class="metric-chip-num">51</div><div class="metric-chip-label">i10-index</div></div>
     </div>
-    <p style="font-family:'Arial',sans-serif;font-size:0.72rem;color:var(--muted);margin-top:0.7rem;">
-      <span data-lang="es">Fuente: Google Scholar · Actualizado junio 2026</span>
-      <span data-lang="en">Source: Google Scholar · Updated June 2026</span>
-    </p>
+    <p style="font-family:Arial,sans-serif;font-size:.7rem;color:var(--muted);margin-top:.6rem"><span data-lang="es">Actualizado junio 2026</span><span data-lang="en">Updated June 2026</span></p>
   </div>
 
-  <!-- FORMACIÓN -->
   <div class="card">
-    <h3 data-lang="es">Formación Académica</h3>
-    <h3 data-lang="en">Education</h3>
-    <div class="edu-item">
-      <p class="edu-degree" data-lang="es">Doctor en Ciencias de la Información</p>
-      <p class="edu-degree" data-lang="en">PhD in Information Sciences</p>
-      <p class="edu-place">Universidad de Navarra, 1994</p>
-    </div>
-    <div class="edu-item">
-      <p class="edu-degree" data-lang="es">Máster en Estadística Aplicada</p>
-      <p class="edu-degree" data-lang="en">Master's in Applied Statistics</p>
-      <p class="edu-place">UNED, 2020</p>
-    </div>
-    <div class="edu-item">
-      <p class="edu-degree" data-lang="es">Posgrado en Big Data</p>
-      <p class="edu-degree" data-lang="en">Postgraduate in Big Data</p>
-      <p class="edu-place">Universidad de Navarra, 2019</p>
-    </div>
-    <div class="edu-item">
-      <p class="edu-degree" data-lang="es">Master en Dirección de Marketing</p>
-      <p class="edu-degree" data-lang="en">Master's in Marketing Management</p>
-      <p class="edu-place">ESIC, 1998</p>
-    </div>
-    <div class="edu-item">
-      <p class="edu-degree" data-lang="es">Licenciado en Ciencias de la Información</p>
-      <p class="edu-degree" data-lang="en">BA in Information Sciences</p>
-      <p class="edu-place" data-lang="es">Universidad de Navarra, 1990 · <strong>Premio Nacional</strong></p>
-      <p class="edu-place" data-lang="en">University of Navarra, 1990 · <strong>National Prize</strong></p>
-    </div>
+    <h3 data-lang="es">Formación Académica</h3><h3 data-lang="en">Education</h3>
+    <div class="edu-item"><p class="edu-degree" data-lang="es">Doctor en Ciencias de la Información</p><p class="edu-degree" data-lang="en">PhD in Information Sciences</p><p class="edu-place">Universidad de Navarra, 1994</p></div>
+    <div class="edu-item"><p class="edu-degree" data-lang="es">Máster en Estadística Aplicada</p><p class="edu-degree" data-lang="en">Master's in Applied Statistics</p><p class="edu-place">UNED, 2020</p></div>
+    <div class="edu-item"><p class="edu-degree" data-lang="es">Posgrado en Big Data</p><p class="edu-degree" data-lang="en">Postgraduate in Big Data</p><p class="edu-place">Universidad de Navarra, 2019</p></div>
+    <div class="edu-item"><p class="edu-degree" data-lang="es">Master en Dirección de Marketing</p><p class="edu-degree" data-lang="en">Master's in Marketing Management</p><p class="edu-place">ESIC, 1998</p></div>
+    <div class="edu-item"><p class="edu-degree" data-lang="es">Licenciado en Ciencias de la Información</p><p class="edu-degree" data-lang="en">BA in Information Sciences</p><p class="edu-place" data-lang="es">Universidad de Navarra, 1990 · <strong>Premio Nacional</strong></p><p class="edu-place" data-lang="en">University of Navarra, 1990 · <strong>National Prize</strong></p></div>
   </div>
 
-  <!-- DISTINCIONES -->
   <div class="card">
-    <h3 data-lang="es">Distinciones</h3>
-    <h3 data-lang="en">Awards &amp; Honours</h3>
-    <div class="award-item">
-      <p class="award-year">2022</p>
-      <p data-lang="es">Acreditación Investigación Avanzada (Cátedra) — AQU</p>
-      <p data-lang="en">Advanced Research Accreditation (Full Professorship) — AQU</p>
-    </div>
-    <div class="award-item">
-      <p class="award-year">2021–2023</p>
-      <p data-lang="es">4 Sexenios de Investigación — ANECA (1997–2022)</p>
-      <p data-lang="en">4 Six-Year Research Periods — ANECA (1997–2022)</p>
-    </div>
-    <div class="award-item">
-      <p class="award-year">2009</p>
-      <p>Carnegie Mellon &amp; Knight Foundation Grant</p>
-    </div>
-    <div class="award-item">
-      <p class="award-year">1990</p>
-      <p data-lang="es">1er Premio Nacional de Terminación de Estudios</p>
-      <p data-lang="en">National Prize for Academic Excellence (Information Sciences)</p>
-    </div>
-    <div class="award-item">
-      <p class="award-year">1990</p>
-      <p>Premio Garcilaso — Diario de Navarra</p>
-    </div>
+    <h3 data-lang="es">Distinciones y Premios</h3><h3 data-lang="en">Awards &amp; Honours</h3>
+    <div class="award-item"><p class="award-year">2022</p><p data-lang="es">Acreditación Investigación Avanzada (Cátedra) — AQU</p><p data-lang="en">Advanced Research Accreditation (Full Professorship) — AQU</p></div>
+    <div class="award-item"><p class="award-year">1997–2022</p><p data-lang="es">4 Sexenios de Investigación — ANECA</p><p data-lang="en">4 Six-Year Research Periods Accredited — ANECA</p></div>
+    <div class="award-item"><p class="award-year">2011</p><p data-lang="es">Acreditación Profesor Titular — ANECA</p><p data-lang="en">Associate Professor Accreditation — ANECA</p></div>
+    <div class="award-item"><p class="award-year">2009</p><p>Carnegie Mellon &amp; Knight Foundation Grant</p></div>
+    <div class="award-item"><p class="award-year">2001</p><p data-lang="es">Beca Charn Uswachoke International Developmental Fund</p><p data-lang="en">Charn Uswachoke International Developmental Fund Grant</p></div>
+    <div class="award-item"><p class="award-year">1991–94</p><p data-lang="es">Beca de Doctorado — Ministerio de Educación y Ciencia</p><p data-lang="en">PhD Fellowship — Spanish Ministry of Education and Science</p></div>
+    <div class="award-item"><p class="award-year">1990</p><p data-lang="es">1er Premio Nacional de Terminación de Estudios (Ciencias de la Información)</p><p data-lang="en">National Prize for Academic Excellence (Information Sciences)</p></div>
+    <div class="award-item"><p class="award-year">1990</p><p>Premio Garcilaso — Diario de Navarra / Universidad de Navarra</p></div>
+    <div class="award-item"><p class="award-year">1989</p><p data-lang="es">1er Premio Concurso de Prácticas Periodísticas — Universidad de Navarra</p><p data-lang="en">1st Prize for Journalism Practice — University of Navarra</p></div>
   </div>
 
-  <!-- ACTIVIDAD EDITORIAL -->
   <div class="card">
-    <h3 data-lang="es">Actividad Editorial</h3>
-    <h3 data-lang="en">Editorial Activities</h3>
-    <div class="award-item">
-      <p data-lang="es">Miembro del Editorial Board, <em>Journal of Media Business Studies</em> (desde 2003)</p>
-      <p data-lang="en">Editorial Board Member, <em>Journal of Media Business Studies</em> (since 2003)</p>
-    </div>
-    <div class="award-item">
-      <p data-lang="es">Miembro del Consejo Editorial, <em>Palabra-Clave</em> (desde 2005)</p>
-      <p data-lang="en">Editorial Board Member, <em>Palabra-Clave</em> (since 2005)</p>
-    </div>
-    <div class="award-item">
-      <p data-lang="es">Miembro del Consejo Editorial, <em>Cuadernos de Información</em> (desde 2008)</p>
-      <p data-lang="en">Editorial Board Member, <em>Cuadernos de Información</em> (since 2008)</p>
-    </div>
-    <div class="award-item">
-      <p data-lang="es">Revisor habitual: <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Digital Journalism</em>, <em>Journal of Media Economics</em></p>
-      <p data-lang="en">Regular reviewer: <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Digital Journalism</em>, <em>Journal of Media Economics</em></p>
-    </div>
+    <h3 data-lang="es">Cargos Editoriales</h3><h3 data-lang="en">Editorial Roles</h3>
+    <div class="award-item"><p data-lang="es">Editorial Board, <em>Journal of Media Business Studies</em> (desde 2003)</p><p data-lang="en">Editorial Board, <em>Journal of Media Business Studies</em> (since 2003)</p></div>
+    <div class="award-item"><p data-lang="es">Consejo Editorial, <em>Palabra-Clave</em>, U. La Sabana, Colombia (desde 2005)</p><p data-lang="en">Editorial Board, <em>Palabra-Clave</em>, U. La Sabana, Colombia (since 2005)</p></div>
+    <div class="award-item"><p data-lang="es">Consejo Editorial, <em>Cuadernos de Información</em>, UC Chile (desde 2008)</p><p data-lang="en">Editorial Board, <em>Cuadernos de Información</em>, UC Chile (since 2008)</p></div>
+    <div class="award-item"><p data-lang="es">Director, <em>Revista Empresa y Humanismo</em> (2014–2018)</p><p data-lang="en">Editor-in-Chief, <em>Revista Empresa y Humanismo</em> (2014–2018)</p></div>
+    <div class="award-item"><p data-lang="es">Reviewer habitual: <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Digital Journalism</em>, <em>Journal of Media Economics</em>, <em>European Journal of Communication</em>, entre otros</p><p data-lang="en">Regular reviewer: <em>Journalism Studies</em>, <em>Journalism Practice</em>, <em>Digital Journalism</em>, <em>Journal of Media Economics</em>, <em>European Journal of Communication</em>, and others</p></div>
   </div>
 
-  <!-- IDIOMAS -->
   <div class="card">
-    <h3 data-lang="es">Idiomas</h3>
-    <h3 data-lang="en">Languages</h3>
-    <div class="contact-item">
-      <span>🇪🇸</span>
-      <span><strong data-lang="es">Español</strong><strong data-lang="en">Spanish</strong> — <span data-lang="es">Nativo</span><span data-lang="en">Native</span></span>
-    </div>
-    <div class="contact-item">
-      <span>🇬🇧</span>
-      <span><strong data-lang="es">Inglés</strong><strong data-lang="en">English</strong> — <span data-lang="es">Alto</span><span data-lang="en">Proficient</span> (IELTS 8.5)</span>
-    </div>
-    <div class="contact-item" style="margin-bottom:0">
-      <span>🇩🇪</span>
-      <span><strong data-lang="es">Alemán</strong><strong data-lang="en">German</strong> — B2</span>
-    </div>
+    <h3 data-lang="es">Asociaciones Profesionales</h3><h3 data-lang="en">Professional Associations</h3>
+    <div class="award-item">AE-IC (Asociación Española de Investigación de la Comunicación)</div>
+    <div class="award-item">AEJMC (Media Management &amp; Economics Division)</div>
+    <div class="award-item">ECREA (European Communication Research &amp; Education Association)</div>
+    <div class="award-item">EMMA (European Media Management Association)</div>
+    <div class="award-item">IAMCR (International Association for Media and Communication Research)</div>
+    <div class="award-item">WAPOR (World Association of Public Opinion Research)</div>
+  </div>
+
+  <div class="card">
+    <h3 data-lang="es">Idiomas</h3><h3 data-lang="en">Languages</h3>
+    <div class="contact-item"><span>🇪🇸</span><span><strong data-lang="es">Español</strong><strong data-lang="en">Spanish</strong> — <span data-lang="es">Nativo</span><span data-lang="en">Native</span></span></div>
+    <div class="contact-item"><span>🇬🇧</span><span><strong data-lang="es">Inglés</strong><strong data-lang="en">English</strong> — <span data-lang="es">Alto</span><span data-lang="en">Proficient</span> (IELTS 8.5)</span></div>
+    <div class="contact-item" style="margin-bottom:0"><span>🇩🇪</span><span><strong data-lang="es">Alemán</strong><strong data-lang="en">German</strong> — B2</span></div>
   </div>
 
 </aside>
@@ -1064,10 +817,11 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Ángel Arrese · <span data-lang="es">Facultad de Comunicación · Universidad de Navarra · Pamplona</span><span data-lang="en">School of Communication · University of Navarra · Pamplona</span></p>
-  <p style="margin-top:0.4rem">
+  <p style="margin-top:.4rem">
     <a href="mailto:aarrese@unav.es">aarrese@unav.es</a> ·
-    <a href="https://orcid.org/0000-0002-0586-4188" target="_blank" rel="noopener">ORCID 0000-0002-0586-4188</a> ·
-    <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-0586-4188" target="_blank">ORCID 0000-0002-0586-4188</a> ·
+    <a href="https://scholar.google.es/citations?user=YY7Dm8QAAAAJ&hl=es" target="_blank">Google Scholar</a> ·
+    <a href="https://www.researchgate.net/profile/Angel-Arrese" target="_blank">ResearchGate</a>
   </p>
 </footer>
 
@@ -1076,12 +830,14 @@
     document.getElementById('html-root').lang = lang;
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    // Fix: details has two summaries, hide the inactive one
+    document.querySelectorAll('details summary[data-lang]').forEach(s => {
+      s.style.display = s.dataset.lang === lang ? 'flex' : 'none';
+    });
     localStorage.setItem('lang', lang);
   }
-  // Restore saved preference
-  const saved = localStorage.getItem('lang');
-  if (saved) setLang(saved);
+  const saved = localStorage.getItem('lang') || 'es';
+  setLang(saved);
 </script>
-
 </body>
 </html>
