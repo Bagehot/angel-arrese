@@ -49,12 +49,12 @@
     .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.45); }
 
     /* STATS */
-    .stats-bar { background: var(--light); border-bottom: 1px solid var(--border); }
-    .stats-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: 1.3rem 2rem; flex-wrap: wrap; }
-    .stat { text-align: center; flex: 1; min-width: 100px; padding: .3rem 1rem; border-right: 1px solid var(--border); }
+    .stats-bar { background: transparent; border-bottom: none; }
+    .stats-inner { max-width: 1100px; margin: 0 auto; display: flex; padding: .55rem 2rem; flex-wrap: wrap; gap: 0; justify-content: center; }
+    .stat { display: inline-flex; align-items: baseline; gap: .28rem; padding: .15rem .75rem; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
-    .stat-num { font-size: 1.85rem; font-weight: bold; color: var(--blue); line-height: 1; margin-bottom: .15rem; }
-    .stat-label { font-family: Arial,sans-serif; font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .stat-num { font-size: .82rem; font-weight: 600; color: var(--muted); line-height: 1; }
+    .stat-label { font-family: Arial,sans-serif; font-size: .72rem; color: var(--muted); opacity: .75; text-transform: none; letter-spacing: 0; }
 
     /* LAYOUT */
     .page-content { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 300px; gap: 2.8rem; align-items: start; }
@@ -137,9 +137,9 @@
     .profile-link { display: flex; align-items: center; gap: .55rem; font-family: Arial,sans-serif; font-size: .81rem; padding: .42rem .75rem; border-radius: 5px; background: #fff; border: 1px solid var(--border); color: var(--text); transition: border-color .2s; }
     .profile-link:hover { border-color: var(--blue); text-decoration: none; color: var(--blue); }
     .metrics-row { display: flex; gap: .45rem; flex-wrap: wrap; }
-    .metric-chip { flex: 1; min-width: 65px; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: .45rem .35rem; text-align: center; }
-    .metric-chip-num { font-size: 1.25rem; font-weight: bold; color: var(--blue); line-height: 1; }
-    .metric-chip-label { font-family: Arial,sans-serif; font-size: .63rem; color: var(--muted); margin-top: .1rem; }
+    .metric-chip { flex: 1; min-width: 55px; background: transparent; border: none; padding: .25rem .2rem; text-align: center; }
+    .metric-chip-num { font-size: .85rem; font-weight: 600; color: var(--muted); line-height: 1; }
+    .metric-chip-label { font-family: Arial,sans-serif; font-size: .63rem; color: var(--muted); opacity: .7; margin-top: .1rem; }
     .award-item { font-family: Arial,sans-serif; font-size: .8rem; padding: .42rem 0; border-bottom: 1px solid var(--border); }
     .award-item:last-child { border-bottom: none; padding-bottom: 0; }
     .award-year { font-size: .7rem; color: var(--accent); font-weight: bold; }
